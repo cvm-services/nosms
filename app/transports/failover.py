@@ -55,7 +55,7 @@ from __future__ import annotations
 
 import logging
 
-from .base import Capabilities, SendResult
+from .base import Capabilities, SendResult, rail_refusal_reason
 from .errors import RailPaced, RailUnavailable, UnsupportedDestination
 from .jmp_cheogram import is_rail_down
 
@@ -110,6 +110,57 @@ class FailoverTransport:
             "degraded_sends": self.degraded_count,
             "primary_down": not self.primary.capabilities.available,
         }
+
+    # --- lifecycle --------------------------------------------------------
+
+    def start(self, timeout: float | None = None) -> bool:
+        """Start both rails. A rail that RAISES is as non-fatal as one that
+        answers no -- the same rule this module applies to a raising *send*, and
+        the reason a rail whose outage is loud (WhatsApp raises on a ban) can be
+        wrapped here at all.
+
+        Both rails are always attempted: a primary that will not start must not
+        skip the fallback start, which is the entire point of the stack. The
+        primary owns the connection; the fallback is stateless (SMTP is dialled
+        per send) and reports its own availability.
+        """
+        primary_ok = self._start_rail(self.primary, timeout)
+        fallback_ok = self._start_rail(self.fallback, timeout)
+        # `or`: a stack whose primary is down but whose fallback can serve IS
+        # ready -- that is exactly what `capabilities` already reports, and
+        # answering false here printed a spurious RAIL DOWN for a working stack.
+        return primary_ok or fallback_ok
+
+    @staticmethod
+    def _start_rail(rail, timeout: float | None) -> bool:
+        """``rail.start()`` as a plain bool: an exception means "not ready"."""
+        try:
+            return bool(rail.start(timeout=timeout))
+        except Exception:                    # base.py:92: rail trouble is not fatal
+            logger.warning("nosms failover: %s start raised", rail.name,
+                           exc_info=True)
+            return False
+
+    def close(self) -> None:
+        """Close both. The fallback holds nothing, and closing is idempotent."""
+        for rail in (self.primary, self.fallback):
+            try:
+                rail.close()
+            except Exception:                      # base.py:97: never raises
+                # One rail blowing up must not strand the other's cleanup.
+                logger.warning("nosms failover: %s close raised", rail.name,
+                               exc_info=True)
+
+    @property
+    def unavailable_reason(self) -> str | None:
+        """Why the stack cannot serve now: the primary's reason, else the
+        fallback's. ``None`` only when neither rail has anything to say —
+        which is the one honest case for `rail_not_configured`."""
+        for rail in (self.primary, self.fallback):
+            reason = rail_refusal_reason(rail)
+            if reason:
+                return reason
+        return None
 
     # --- sending ----------------------------------------------------------
 

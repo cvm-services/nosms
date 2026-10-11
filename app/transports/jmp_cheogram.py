@@ -31,6 +31,7 @@ the process holding the XMPP session — no second daemon to keep in step.
 """
 from __future__ import annotations
 
+import logging
 import uuid
 from typing import Protocol, runtime_checkable
 
@@ -38,6 +39,8 @@ from .base import Capabilities, SendResult
 from .errors import RailPaced, RailUnavailable, UnsupportedDestination
 from .nanp import is_us_ca
 from .pacing import Pacer
+
+logger = logging.getLogger(__name__)
 
 __all__ = ["JmpCheogramTransport", "JmpLink", "RAIL_UNAVAILABLE_PREFIX",
            "is_rail_down", "DEFAULT_PACING_STATE"]
@@ -155,6 +158,58 @@ class JmpCheogramTransport:
     def mark_down(self, reason: str) -> None:
         """Force the rail down (degrade path / operator kill-switch)."""
         self._down_reason = reason
+
+    # --- lifecycle: the XMPP link the server must start -------------------
+
+    def start(self, timeout: float | None = None) -> bool:
+        """Start the long-lived link. ``True`` = the rail can serve now.
+
+        The live bug (2026-10-11): the CVM server built this rail and never
+        called this, so ``capabilities.available`` was False for the whole
+        process and every ``sms.send`` was refused before the payment gate.
+
+        Nothing here latches: a link that is still reconnecting stays a
+        *live* answer through :attr:`unavailable_reason`, because the degrade
+        path branches on :attr:`down_reason` and a reconnect window must never
+        mark the rail down for good (SlixmppLink retries with backoff).
+        """
+        starter = getattr(self.link, "start", None)
+        if starter is not None:
+            starter(timeout=timeout)
+        return bool(self.capabilities.available)
+
+    def close(self) -> None:
+        """Stop the link. Registered on the server's exit path.
+
+        The line is personal: a session left behind is a second device on it,
+        which is exactly what JMP would see as automation.
+        """
+        closer = getattr(self.link, "close", None)
+        if closer is None:
+            return
+        try:
+            closer()
+        except Exception:                          # base.py:97: never raises
+            # close() runs in a `finally:`. A raise here REPLACES the exception
+            # already in flight, so the real failure is the one you lose.
+            logger.warning("nosms jmp: link close raised (already shutting down)",
+                           exc_info=True)
+
+    @property
+    def unavailable_reason(self) -> str | None:
+        """Why the rail cannot serve RIGHT NOW, or ``None`` when it can.
+
+        Live, unlike :attr:`down_reason`: the latched token stays reserved for a
+        terminal failure (the degrade path branches on it, and a reconnect
+        window must not divert paid traffic), while this answers the caller's
+        actual question — "can you send?" — from the link's own state, so it
+        clears itself the moment the link is back.
+        """
+        if self._down_reason is not None:
+            return self._down_reason
+        if self.link.is_connected():
+            return None
+        return getattr(self.link, "down_reason", None) or "not_connected"
 
     # --- sending ----------------------------------------------------------
 
