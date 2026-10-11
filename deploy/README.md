@@ -25,7 +25,7 @@ master** (not a worktree, so worktree pruning cannot kill the service) and pins:
 - the relay set **including `wss://relay.primal.net`** — mandatory, see below.
 - `NOSMS_DB_PATH` under `~/.hermes/state/`, so the escrow DB is not in the tree.
 
-The server key file is `~/.repos/nosms/.cvm-server.nsec` (0600, gitignored), so
+The server key file is `~/repos/nosms/.cvm-server.nsec` (0600, gitignored), so
 restarts keep the same service npub.
 
 ## Known live defect: the contextvm relays drop gift-wrapped replies
