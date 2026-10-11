@@ -17,13 +17,16 @@ a permanent ban.
 
 Phases (each idempotent-ish, all evidence-dumped):
   gate     show dq05 load; abort unless load < 4 (card precondition)
+  diag     READ-ONLY guest diagnosis: egress + logcat + gfxinfo + ANR state
+           (no taps, no NEXT, no OTP — safe to run at any load)
   state    dump UI XML, show where registration stands
-  register tap the phone field, type the number, tap NEXT
+  register tap the phone field, type the number, click NEXT ONCE, then ASSERT
+           the verification screen appeared (never re-click NEXT)
   otp      poll jmp_inbox.db for a new inbound SMS, extract the code, type it
-  evidence dumpsys versionName + screenshots + UI XML
+  evidence dumpsys versionName + screenshots + UI XML + registered-state verdict
 
 Usage:
-  wa_register.py gate|state|register|otp|evidence [--out DIR]
+  wa_register.py gate|diag|state|register|otp|evidence [--out DIR]
 """
 from __future__ import annotations
 
@@ -58,6 +61,94 @@ VOICE_REFUSAL_MARKERS = (
     "not supported", "unsupported", "invalid number", "incorrect number",
     "try again", "resend", "wrong number",
 )
+
+# --- screen assertions -----------------------------------------------------
+# Run-173 lesson: uiautomator2 3.7.0's UiObject.click() returns None — it waits
+# for the node, takes the visible-bounds centre and injects a tap; there is NO
+# success value to trust. "The click returned" is therefore NOT progress. The
+# only proof that NEXT advanced is that a verification-screen selector APPEARS
+# (input assertions below) or a refusal/dialog appears. Run 173 stopped with the
+# post-NEXT hierarchy byte-identical to the pre-NEXT one, so the driver now
+# asserts instead of eyeballing a dump.
+PHONE_SCREEN_RID = "com.whatsapp:id/registration_phone"
+POST_NEXT_SELECTORS = (
+    {"rid": "com.whatsapp:id/verification_code"},
+    {"rid": "com.whatsapp:id/registration_verify"},
+    {"rid": "com.whatsapp:id/register_verify"},
+    {"text": "Verifying your number"},
+    {"text": "Enter the 6-digit code"},
+    {"text": "6-digit code"},
+    {"text": "Waiting to automatically detect"},
+    {"text": "Verification code"},
+)
+REGISTERED_SELECTORS = (
+    {"rid": "com.whatsapp:id/registration_success"},
+    {"text": "Welcome to WhatsApp"},
+    {"text": "Agree and continue"},
+    {"text": "Tap to change your profile name"},
+)
+POST_NEXT_WAIT_S = int(os.environ.get("POST_NEXT_WAIT_S", "60"))
+POST_CODE_WAIT_S = int(os.environ.get("POST_CODE_WAIT_S", "90"))
+
+
+def field_digits(text: str) -> str:
+    """Digits of what the phone field actually holds — WhatsApp renders the
+    number as `(810) 294-4652`, so compare digits, never the raw string."""
+    return "".join(re.findall(r"\d", text or ""))
+
+
+def phone_field_is_number(text: str, number: str = JMP_NUMBER) -> bool:
+    """True when the field's rendered value contains the whole JMP number."""
+    return number in field_digits(text)
+
+
+def match_any(xml: str, selectors) -> dict | None:
+    """First node matching any selector in `selectors` (list of wa_ui.find kwargs)."""
+    for sel in selectors:
+        node = wa_ui.find(xml, **sel)
+        if node is not None:
+            return node
+    return None
+
+
+def capture_diag(out_dir: str, tag: str) -> None:
+    """Bounded READ-ONLY diagnostic capture: logcat, frame stats, ANR, egress.
+
+    Always safe (no taps, no ban surface) and never allowed to break the pass —
+    a diagnostics failure is logged and swallowed. logcat is the artifact that
+    identifies why a NEXT/OTP tap did not take effect.
+    """
+    os.makedirs(out_dir, exist_ok=True)
+    for name, cmd in (
+        ("logcat.txt", ("logcat", "-d", "-t", "800", "-v", "threadtime")),
+        ("gfxinfo.txt", ("shell", "dumpsys gfxinfo com.whatsapp")),
+        ("activity_anr.txt", ("shell", "dumpsys activity | grep -i -A2 anr")),
+        ("connectivity.txt",
+         ("shell", "dumpsys connectivity | grep -i -m20 'validated\\|agentinfo'")),
+    ):
+        try:
+            rc, out, err = wa_ui.adb(*cmd, timeout=60)
+            with open(os.path.join(out_dir, f"{tag}_{name}"), "w") as f:
+                f.write(out or err or f"(rc={rc})\n")
+        except Exception as e:  # diagnostics must never break the pass
+            log(f"diag {name} failed: {e}")
+
+
+def guest_egress_ok() -> tuple[bool, str]:
+    """Read-only: can the GUEST reach WhatsApp? A NEXT that cannot reach the
+    network dead-ends silently (no OTP, no dialog, unchanged screen), which is
+    indistinguishable from the run-173 stall — so check it BEFORE clicking."""
+    try:
+        rc, out, _ = wa_ui.adb("shell", "ping -c 2 -W 3 v.whatsapp.com", timeout=45)
+        if rc == 0 and "bytes from" in out:
+            return True, "ping v.whatsapp.com ok"
+        rc2, out2, _ = wa_ui.adb(
+            "shell", "dumpsys connectivity | grep -c -i validated", timeout=45)
+        validated = (out2 or "").strip()
+        return (validated not in ("", "0")), (
+            f"ping failed (rc={rc}); connectivity VALIDATED lines={validated or '0'}")
+    except Exception as e:
+        return False, f"egress probe error: {e}"
 
 
 def log(msg: str) -> None:
@@ -168,6 +259,55 @@ def poll_otp(baseline: int, out_dir: str) -> str:
     return ""  # unreachable
 
 
+def wait_for_post_next(out_dir: str, wait_s: int) -> tuple[str, dict | None]:
+    """Poll until a verification-screen selector appears; return (xml, match).
+
+    Exactly ONE NEXT click has already been sent by the caller (u2's
+    UiObject.click() has no success signal — see the notes above). This NEVER
+    clicks NEXT again: it observes only, and accepts the documented
+    confirm-number dialog exactly once via its OK button. On timeout it returns
+    (last_xml, None) so the caller can fail loud WITH evidence.
+    """
+    t0 = time.time()
+    confirm_ok_done = False
+    xml = ""
+    while time.time() - t0 < wait_s:
+        xml = dump_ui(os.path.join(out_dir, "12_after_next.xml"))
+        check_refusals(xml, out_dir)
+        hit = match_any(xml, POST_NEXT_SELECTORS)
+        if hit is not None:
+            return xml, hit
+        if (not confirm_ok_done
+                and wa_ui.find(xml, text="OK", exact=True) is not None
+                and wa_ui.find(xml, text="confirm", exact=False) is not None):
+            log("confirm-number dialog detected; tapping OK once")
+            u2("click-text", "OK")
+            confirm_ok_done = True
+            time.sleep(3)
+            continue
+        if wa_ui.find(xml, rid=PHONE_SCREEN_RID) is None:
+            # Neither the phone screen nor a known verify selector: an
+            # unexpected screen. Record it and stop rather than guess.
+            log("phone-entry field is gone but no known verify selector matched")
+            return xml, None
+        time.sleep(2)
+    return xml, None
+
+
+def wait_for_registered(out_dir: str, wait_s: int) -> tuple[str, dict | None]:
+    """Poll until a post-registration selector appears (assert-driven, read-only)."""
+    t0 = time.time()
+    xml = ""
+    while time.time() - t0 < wait_s:
+        xml = dump_ui(os.path.join(out_dir, "21_code_typed.xml"))
+        check_refusals(xml, out_dir)
+        hit = match_any(xml, REGISTERED_SELECTORS)
+        if hit is not None:
+            return xml, hit
+        time.sleep(3)
+    return xml, None
+
+
 def cmd_gate(_args) -> int:
     load = subprocess.run(
         ["ssh", "dq05", "cat /proc/loadavg"],
@@ -212,17 +352,17 @@ def cmd_register(args) -> int:
     # Field edits NEVER trigger an OTP — only NEXT/OK does — so one bounded
     # re-entry attempt stays ban-safe.
     res = u2("set-text", "com.whatsapp:id/registration_phone", JMP_NUMBER)
-    shown = "".join(re.findall(r"\d", res.get("text") or ""))
-    log(f"set-text result: text={res.get('text')!r} digits={shown!r}")
+    shown = res.get("text") or ""
+    log(f"set-text result: text={shown!r} digits={field_digits(shown)!r}")
     # uiautomator2's immediate get_text() is the authoritative result of
     # ACTION_SET_TEXT. A follow-up .info RPC is deliberately avoided: on the
     # remote atx-agent it can disconnect transiently after clear/set_text,
     # while the returned text is already the same accessibility value.
-    if JMP_NUMBER not in shown:
+    if not phone_field_is_number(shown):
         log(f"field shows {shown!r}; one ban-safe re-entry attempt")
         res = u2("set-text", "com.whatsapp:id/registration_phone", JMP_NUMBER)
-        shown = "".join(re.findall(r"\d", res.get("text") or ""))
-        if JMP_NUMBER not in shown:
+        shown = res.get("text") or ""
+        if not phone_field_is_number(shown):
             xml = dump_ui(os.path.join(args.out, "11_number_failed.xml"))
             wa_ui.print_nodes(xml)
             fail_loud(f"phone field shows {shown!r}, expected {JMP_NUMBER} — abort before NEXT", args.out)
@@ -235,22 +375,38 @@ def cmd_register(args) -> int:
     with open(baseline_path, "w") as f:
         f.write(str(baseline))
     log(f"otp baseline {baseline} persisted to {baseline_path}")
-    log(f"field verified: {shown!r}; tapping NEXT")
-    res = u2("click-text", "NEXT")
-    log(f"NEXT click: {res}")
-    time.sleep(4)
-    xml = dump_ui(os.path.join(args.out, "12_after_next.xml"))
-    check_refusals(xml, args.out)
+    # Guest egress preflight (READ-ONLY). A NEXT that cannot reach WhatsApp
+    # dead-ends silently — no OTP, no dialog, screen unchanged — which is
+    # indistinguishable from the run-173 stall. Warn loudly so a dead guest is
+    # never misread as a UI bug; hard-fail only under EGRESS_STRICT=1.
+    egress_ok, egress_detail = guest_egress_ok()
+    log(f"guest egress preflight: ok={egress_ok} ({egress_detail})")
+    if not egress_ok:
+        capture_diag(args.out, "pre_next")
+        if os.environ.get("EGRESS_STRICT") == "1":
+            fail_loud(f"guest has no working egress to WhatsApp ({egress_detail}) "
+                      f"— refusing to spend a registration attempt", args.out)
+        log("WARNING: egress preflight failed; NEXT may no-op silently")
+
+    # --- NEXT: ONE click, then ASSERT the screen advanced --------------------
+    # Run-173 stopped here with the post-NEXT hierarchy byte-identical to the
+    # pre-NEXT one, because u2's click has no success signal and the driver only
+    # eyeballed the dump. Assert instead: the click is sent once, then we wait
+    # for a verification-screen selector to APPEAR. No re-click, ever.
+    log(f"field verified: {shown!r}; clicking NEXT ONCE (assert-driven)")
+    u2("click-text", "NEXT")
+    xml, hit = wait_for_post_next(args.out, POST_NEXT_WAIT_S)
     wa_ui.print_nodes(xml)
-    log("NEXT tapped; screen after:")
-    # allow the confirm-dialog variant
-    if wa_ui.find(xml, text="OK") and wa_ui.find(xml, text="confirm", exact=False):
-        log("confirmation dialog detected; tapping OK")
-        res = u2("click-text", "OK")
-        log(f"OK click: {res}")
-        time.sleep(4)
-        xml = dump_ui(os.path.join(args.out, "13_after_confirm.xml"))
-        check_refusals(xml, args.out)
+    if hit is None:
+        capture_diag(args.out, "next_stalled")
+        fail_loud(
+            f"NEXT produced no screen change within {POST_NEXT_WAIT_S}s: no "
+            f"verification-screen selector appeared and the phone-entry screen "
+            f"is unchanged. NOT re-clicking. Read {args.out}/next_stalled_logcat.txt "
+            f"+ next_stalled_gfxinfo.txt — logcat/log-frame stats identify whether "
+            f"the tap was dropped, the app is starved/ANR, or the app never ran "
+            f"the submit handler.", args.out)
+    log(f"NEXT advanced: matched {hit.get('resource-id') or hit.get('text')!r}")
     log("register phase done — now run the otp phase (baseline captured at NEXT-tap)")
     return 0
 
@@ -279,11 +435,41 @@ def cmd_otp(args) -> int:
     log(f"typing code {code} via uiautomator2")
     res = u2("set-text", entry["resource-id"], code)
     log(f"set-text result: text={res.get('text')!r}")
-    time.sleep(6)
-    xml = dump_ui(os.path.join(args.out, "21_code_typed.xml"))
-    check_refusals(xml, args.out)
+    xml, hit = wait_for_registered(args.out, POST_CODE_WAIT_S)
     wa_ui.print_nodes(xml)
+    if hit is None:
+        capture_diag(args.out, "code_stalled")
+        log(f"WARNING: no registered-state selector within {POST_CODE_WAIT_S}s — "
+            f"running the evidence phase anyway; diagnostics in "
+            f"{args.out}/code_stalled_*.txt")
+    else:
+        log(f"registered-state selector matched: "
+            f"{hit.get('resource-id') or hit.get('text')!r}")
     log("code entered; check evidence phase for the resulting state")
+    return 0
+
+
+def cmd_diag(args) -> int:
+    """READ-ONLY guest diagnosis — safe at ANY load, zero ban surface.
+
+    No taps, no NEXT, no OTP, no registration attempt: it only reads. This is
+    the phase to run when the box is busy (emulator already up) or to settle why
+    a prior NEXT/OTP tap did not take effect. It captures the guest egress
+    state, logcat, frame stats and ANR state alongside a UI dump.
+    """
+    os.makedirs(args.out, exist_ok=True)
+    ok, detail = guest_egress_ok()
+    log(f"guest egress: ok={ok} ({detail})")
+    xml = dump_ui(os.path.join(args.out, "diag_state.xml"))
+    wa_ui.print_nodes(xml)
+    log(f"phone-entry screen present: "
+        f"{wa_ui.find(xml, rid=PHONE_SCREEN_RID) is not None}")
+    log(f"verify screen present: "
+        f"{match_any(xml, POST_NEXT_SELECTORS) is not None}")
+    log(f"registered screen present: "
+        f"{match_any(xml, REGISTERED_SELECTORS) is not None}")
+    capture_diag(args.out, "diag")
+    log("diag captured: diag_{logcat,gfxinfo,activity_anr,connectivity}.txt")
     return 0
 
 
@@ -297,18 +483,28 @@ def cmd_evidence(args) -> int:
     acct = adb_shell(
         "dumpsys account 2>/dev/null | grep -iA2 whatsapp | head -10")
     print(acct or "(no whatsapp account in dumpsys account)")
+    # Acceptance criterion 3 needs a *verdict*, not a screenshot: assert it.
+    hit = match_any(xml, REGISTERED_SELECTORS)
+    if hit is not None:
+        log(f"REGISTERED-STATE CONFIRMED: matched "
+            f"{hit.get('resource-id') or hit.get('text')!r}")
+    else:
+        log("NOT registered: no registered-state selector in the dump "
+            "(see 30_registered_state.xml/.png)")
     log("evidence captured")
     return 0
 
 
 def main() -> int:
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("phase", choices=["gate", "state", "register", "otp", "evidence"])
+    p.add_argument("phase", choices=["gate", "diag", "state", "register", "otp", "evidence"])
     p.add_argument("--out", default=os.path.join(HERE, "evidence", "e2"),
                     help="dir for UI dumps / screenshots")
     args = p.parse_args()
     if args.phase == "gate":
         return cmd_gate(args)
+    if args.phase == "diag":
+        return cmd_diag(args)
     if args.phase == "state":
         return cmd_state(args)
     if args.phase == "register":

@@ -41,6 +41,38 @@ Branch: wt/t_c930a683 (pushed to origin). Worktree: ~/repos/nosms/.worktrees/t_c
   runbook above top-to-bottom (~10 min). Everything is committed on
   wt/t_c930a683 (HEAD ba094df) — driver, harness wrapper, offline tests.
 
+## 2026-10-11 22:05 — run 312: LOAD-GATED (dq05 1-min 26.8 → 20.2, gate is 4); NEXT stall root-caused OFFLINE
+- Emulator NOT booted (harness policy: no 3.3 GB guest on a 4-core box at load 20+).
+  No registration attempted, no NEXT clicked, no OTP requested ⇒ ban risk ZERO.
+- Offline root-cause analysis of the NEXT non-transition, written up with evidence:
+  tools/whatsapp/evidence/e2/NEXT_TRANSITION_ANALYSIS.md
+  * PROVEN: text entry WORKS — the field renders `(810) 294-4652` (WhatsApp's own
+    phone formatter ran) while set-text was given the bare `8102944652`; the
+    run-172 "field never receives characters" conclusion is dead.
+  * PROVEN: uiautomator2 3.7.0's `UiObject.click()` returns **None**
+    (`_selector.py:138-155` on dq05) — "the click returned" was NEVER a success
+    signal; only a screen change is.
+  * PROVEN: post-NEXT hierarchy == pre-NEXT hierarchy; screenshot shows no
+    dialog/spinner/error; inbox MAX(id) stayed 4 ⇒ submit never reached WhatsApp.
+  * RANKED CAUSES (each with its decisive probe in the artifact):
+    H1 guest starvation (that box measured 10-15 s guest frames under load — the
+    old driver waited only 4 s), H2 injected input rejected by the registration
+    screen, H3 no guest egress, H4 the field never held focus.
+- Driver hardened (tools/whatsapp/wa_register.py):
+  * NEXT is now ASSERT-DRIVEN: ONE click, then wait POST_NEXT_WAIT_S=60 for a
+    verification-screen selector; on stall exit 42 WITH logcat/gfxinfo captured —
+    never re-clicked.
+  * new read-only `diag` phase: egress + logcat + gfxinfo + ANR + a screen
+    verdict. No taps, zero ban surface, safe to run at ANY load.
+  * guest egress preflight before NEXT (`guest_egress_ok()`), warn-by-default,
+    hard-fail under EGRESS_STRICT=1.
+  * `evidence` phase prints a REGISTERED-STATE CONFIRMED / NOT registered verdict.
+- Offline test REWRITTEN — it was a FALSE GREEN: it pointed at
+  `~/worktrees/t_c930a683/evidence/ui` (a deleted workspace) so every case
+  SKIPped and it exited 0. It now asserts against the committed evidence/e2 dumps,
+  including the run-173 regression (`12_after_next.xml` must classify as NOT
+  advanced): **29/29 checks pass.**
+
 ## 2026-10-09 00:15 — run 172 (manager, load window opened): REGISTER BLOCKED — root cause found
 - dq05 load 3.67 → GATE PASS. Emulator already up (emulator-5554), WhatsApp 2.26.39.75,
   phone-entry screen confirmed via `state` (US/+1, NEXT present).
