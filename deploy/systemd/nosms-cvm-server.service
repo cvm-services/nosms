@@ -1,0 +1,36 @@
+[Unit]
+Description=ContextVM nosms SMS service — jmp_cheogram rail (sms.capabilities/pricing/send/status)
+Documentation=https://github.com/felixfelix-bot/nosms/blob/master/scripts/run_cvm_server.py
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Deployed checkout on master (the repo clone, not a worktree): survives worktree
+# pruning and follows the merge HEAD.
+WorkingDirectory=/home/c03rad0r/repos/nosms
+# The serving process owns the XMPP session lifetime (see PR #12): the rail must
+# be started before the announcement and the listen loop.
+Environment=NOSMS_TRANSPORT=jmp
+# A distinct XMPP resource so the service never fights the operator's own
+# listener session on the same JID.
+Environment=NOSMS_JMP_RESOURCE=cvmsvc
+Environment=NOSMS_MINT_URL=https://testnut.cashu.space
+Environment=NOSMS_RAIL_START_TIMEOUT=60
+# Unbuffered stdout so `journalctl --user -u nosms-cvm-server` shows the rail
+# start + the relay accept/reject lines as they happen.
+Environment=PYTHONUNBUFFERED=1
+# Escrow DB lives in state, not in the repo tree.
+Environment=NOSMS_DB_PATH=%h/.hermes/state/nosms-cvm-escrow.db
+# Announce/answer on the canonical CVM relays AND primal. Primal is mandatory:
+# the two contextvm relays drop gift wraps whose NIP-59 backdated created_at
+# falls outside strfry's max-age window (measured ~50% reply loss).
+ExecStart=/home/c03rad0r/.local/bin/python3.13 scripts/run_cvm_server.py \
+    --relays wss://relay.contextvm.org wss://relay2.contextvm.org wss://relay.primal.net \
+    --db %h/.hermes/state/nosms-cvm-escrow.db \
+    --key-file %h/repos/nosms/.cvm-server.nsec
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target
