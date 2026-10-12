@@ -264,8 +264,19 @@ class CvmTools:
                 token_sats=token_obj.amount, mint_fee_sats=mint_fee, net_sats=net)
 
         change = net - price
-        keep_amounts = split_amounts(price)
-        change_amounts = split_amounts(change)
+        # Mint-aware split: some mints (micronuts) publish keys only up to
+        # 128 sats — never ask them to sign a 2048. Falls back to the
+        # classic power-of-two split if the keyset can't be read.
+        try:
+            proof_keyset = token_obj.proofs[0]["id"]
+            denominations = sorted(int(a) for a in self.mint.keys(proof_keyset).keys())
+        except CashuError:                                        # noqa: PERF203
+            # Mint unreachable / keyset unknown -> classic split. Deliberately
+            # NOT a bare except: a missing .keys() attribute is a bug we want
+            # to see, not a silent fallback that ships unbounded splits.
+            denominations = None
+        keep_amounts = split_amounts(price, denominations)
+        change_amounts = split_amounts(change, denominations)
         try:
             captured = list(self.mint.swap(token_obj.proofs, keep_amounts + change_amounts))
         except CashuError as exc:

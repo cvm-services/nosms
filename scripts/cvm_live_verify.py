@@ -60,7 +60,10 @@ def mint_token(mint_url: str, amount: int, unit: str = "sat") -> str:
     client = MintClient(mint_url)
     keyset = client.keyset_id(unit)
     keys = client.keys(keyset)
-    amounts = split_amounts(amount)
+    # Split into the denominations THIS mint has keys for: micronuts publishes
+    # 1..128 only, so a naive split of e.g. 3924 (2048+1024+512+...) gets
+    # KEYSET_NOT_FOUND. `available` keeps us inside the published keyset.
+    amounts = split_amounts(amount, sorted(int(a) for a in keys))
     outputs, blindings = [], []
     for value in amounts:
         blinded, blinding = blind_message(value, keyset)

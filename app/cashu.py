@@ -142,8 +142,14 @@ def unblind(signature: dict, blinding: dict, keyset_id: str, mint_pubkey: str) -
 # amounts (NUT-01/02)
 # --------------------------------------------------------------------------- #
 
-def split_amounts(total: int) -> list[int]:
-    """Decompose `total` into the powers of two a mint has keys for."""
+def split_amounts(total: int, available: list[int] | None = None) -> list[int]:
+    """Decompose `total` into the powers of two a mint has keys for.
+
+    With ``available`` unset this is the classic power-of-two split. With a
+    mint's published denominations (e.g. micronuts publishes only 1..128),
+    the split is mint-aware: never ask the mint to sign an amount it has no
+    key for (a real mint answers that with KEYSET_NOT_FOUND).
+    """
     out: list[int] = []
     bit = 1
     remaining = int(total)
@@ -152,7 +158,18 @@ def split_amounts(total: int) -> list[int]:
             out.append(bit)
         remaining >>= 1
         bit <<= 1
-    return sorted(out, reverse=True)
+    if available is None:
+        return sorted(out, reverse=True)
+    # mint-aware: cap each denomination at the largest the mint publishes
+    cap = max(available)
+    mint_aware: list[int] = []
+    for amount in out:
+        left = amount
+        while left > 0:
+            take = min(left, cap)
+            mint_aware.append(take)
+            left -= take
+    return sorted(mint_aware, reverse=True)
 
 
 def fee_for(ppk: int, n_inputs: int) -> int:

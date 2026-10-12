@@ -40,10 +40,12 @@ def make_token(amounts, mint: str = MINT_URL, keyset: str = KEYSET) -> str:
 class StubMint:
     """Deterministic offline stand-in for ``app.cashu.MintClient``."""
 
-    def __init__(self, mint_url: str = MINT_URL, fee_ppk: int = 0, keyset: str = KEYSET):
+    def __init__(self, mint_url: str = MINT_URL, fee_ppk: int = 0, keyset: str = KEYSET,
+                 max_denomination: int | None = None):
         self.mint_url = mint_url
         self.fee_ppk = int(fee_ppk)
         self.keyset = keyset
+        self.max_denomination = max_denomination
         self.spent: set[str] = set()
         self.swap_calls: list[dict] = []
         self.fail_swap: str | None = None
@@ -52,6 +54,21 @@ class StubMint:
 
     def keyset_id(self) -> str:
         return self.keyset
+
+    def keys(self, keyset_id: str | None = None) -> dict[int, str]:
+        """The published keyset — amount -> public key, like a real mint.
+
+        ``max_denomination`` models a mint whose keyset stops early: the
+        Amperstrand micronuts mint publishes 1..128 only. A swap asking it to
+        sign a 2048 fails with KEYSET_NOT_FOUND on the wire, which in tests is
+        the AssertionError raised by ``swap`` below.
+        """
+        top = self.max_denomination
+        amounts, bit = [], 1
+        while bit <= (top if top else 1 << 30):
+            amounts.append(bit)
+            bit *= 2
+        return {a: "02" + _secrets.token_hex(32) for a in amounts}
 
     def fee_ppk_for(self, keyset_id: str) -> int:
         return self.fee_ppk
@@ -66,6 +83,14 @@ class StubMint:
     def swap(self, inputs, output_amounts) -> list[dict]:
         if self.fail_swap:
             raise CashuError("mint_unreachable", self.fail_swap)
+        # A real mint rejects outputs it has no keys for (KEYSET_NOT_FOUND).
+        if self.max_denomination:
+            unsignable = [a for a in output_amounts if a > self.max_denomination]
+            if unsignable:
+                raise CashuError(
+                    "keyset_not_found",
+                    f"no keys for denominations {sorted(set(unsignable))} "
+                    f"(keyset stops at {self.max_denomination})")
         total_in = sum(p["amount"] for p in inputs)
         fee = self.fee_for(inputs)
         total_out = sum(output_amounts)

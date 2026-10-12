@@ -15,7 +15,7 @@ Environment=NOSMS_TRANSPORT=jmp
 # A distinct XMPP resource so the service never fights the operator's own
 # listener session on the same JID.
 Environment=NOSMS_JMP_RESOURCE=cvmsvc
-Environment=NOSMS_MINT_URL=https://testnut.cashu.space
+Environment=NOSMS_MINT_URL=http://127.0.0.1:3338
 Environment=NOSMS_RAIL_START_TIMEOUT=60
 # Unbuffered stdout so `journalctl --user -u nosms-cvm-server` shows the rail
 # start + the relay accept/reject lines as they happen.
