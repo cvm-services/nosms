@@ -1,0 +1,87 @@
+{
+  "ok": true,
+  "mint": "https://testnut.cashu.space",
+  "steps": [
+    {
+      "step": "mint_funds",
+      "status": "ok",
+      "quote": "01a12d6c-8971-7557-8e2d-1de7fe8eea59",
+      "invoice": "lnbc7680n1p4vcgl6dqqpp5ppt2alcuxvzxye4672tmay...",
+      "proofs": 2,
+      "amount_sats": 768
+    },
+    {
+      "step": "check_state_before",
+      "status": "ok",
+      "states": [
+        "UNSPENT",
+        "UNSPENT"
+      ]
+    },
+    {
+      "step": "escrow_swap",
+      "status": "ok",
+      "keyset": "017bc604aaa08e9b58804bdd552286f15d75ebdaa3d1bccc2a52fc7406b4040fda",
+      "input_fee_ppk": 100,
+      "mint_fee_sats": 1,
+      "net_sats": 767,
+      "postage_sats": 500,
+      "change_sats": 267,
+      "held_sats": 767,
+      "escrow_token": "cashuAeyJ0b2tl..."
+    },
+    {
+      "step": "check_state_after",
+      "status": "ok",
+      "states": [
+        "SPENT",
+        "SPENT"
+      ]
+    },
+    {
+      "step": "escrow_proofs_are_spendable",
+      "status": "ok",
+      "fresh_states": [
+        "UNSPENT",
+        "UNSPENT",
+        "UNSPENT",
+        "UNSPENT",
+        "UNSPENT",
+        "UNSPENT",
+        "UNSPENT",
+        "UNSPENT",
+        "UNSPENT",
+        "UNSPENT"
+      ],
+      "held_sats": 767,
+      "respent_total_sats": 766,
+      "respent_fee_sats": 1,
+      "respent_proofs": 8
+    },
+    {
+      "step": "refund_token",
+      "status": "ok",
+      "refund_sats": 766,
+      "token_prefix": "cashuAeyJ0b2tl..."
+    },
+    {
+      "step": "mint_pubkeys",
+      "status": "ok",
+      "amounts_available": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256,
+        512,
+        1024,
+        2048
+      ],
+      "has_postage_denomination": true
+    }
+  ]
+}
