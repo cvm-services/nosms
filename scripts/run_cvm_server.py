@@ -78,8 +78,18 @@ from app.cvm import (                                              # noqa: E402
 from app.cvm_rpc import handle_rpc                                 # noqa: E402
 from app.cvm_tools import CvmTools                                 # noqa: E402
 from app.escrow import EscrowStore                                 # noqa: E402
+from app.settlements import SettlementStore                        # noqa: E402
 from app.cashu import MintClient                                   # noqa: E402
 from app.transports.base import rail_refusal_reason                # noqa: E402
+
+
+def _settlement_db_path(escrow_db: str) -> str:
+    """Same directory + stem as the escrow DB, so receipts live next to the
+    money they settle and inherit its backup story."""
+    p = pathlib.Path(escrow_db)
+    if p.suffix:
+        return str(p.with_suffix(".settlements" + p.suffix))
+    return str(p) + ".settlements"
 
 CONTRACT_DIR = REPO / "docs" / "cvm"
 
@@ -256,9 +266,14 @@ async def _serve(args, keys, npub, owners, transport) -> int:
     from scripts.jmp_live import build_jmp_service                     # noqa: E402
     jmp = build_jmp_service(server_secret_hex=keys.secret_key().to_hex(),
                             transcript_path=os.environ.get("NOSMS_JMP_TRANSCRIPT"))
+    # Settlement receipts: issued only after a payment has actually landed,
+    # verified on spend. Persistent file next to the escrow DB so receipts
+    # survive restarts (a lost store would strand paid receipts).
+    settlements = SettlementStore(_settlement_db_path(args.db))
     tools = CvmTools(transport, docs=load_docs(), owner_pubkeys=owners,
                      mint=build_mint(), escrow=EscrowStore(args.db),
-                     contract=contract, btc_usd=args.btc_usd, jmp=jmp)
+                     contract=contract, btc_usd=args.btc_usd, jmp=jmp,
+                     settlements=settlements)
 
     signer = NostrSigner.keys(keys)
     client = ClientBuilder().signer(signer).build()

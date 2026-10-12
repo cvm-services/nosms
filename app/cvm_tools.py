@@ -36,6 +36,7 @@ from .cashu import (
     fee_for,
     split_amounts,
 )
+from .settlements import SettlementStore
 from .cvm import (
     ContractContext,
     RAIL_UNAVAILABLE_PREFIX,
@@ -138,12 +139,16 @@ class CvmTools:
                  owner_pubkeys: set[str] | None = None, *,
                  mint=None, escrow: EscrowStore | None = None,
                  contract: ContractContext | None = None,
-                 btc_usd: float | None = None, jmp=None):
+                 btc_usd: float | None = None, jmp=None,
+                 settlements: SettlementStore | None = None):
         self.transport = transport
         self.docs = docs or {}
         self.owner_pubkeys = {p.lower() for p in (owner_pubkeys or set())}
         self.mint = mint
         self.escrow = escrow
+        #: service-issued CEP-8 settlement receipts. None = the receipt path
+        #: refuses (fail closed); a token is then the only way to pay.
+        self.settlements = settlements
         self.contract = contract or ContractContext()
         #: live BTC/USD for the quote. None = the documented default rate.
         self.btc_usd = btc_usd
@@ -335,7 +340,21 @@ class CvmTools:
             if cashu_token:
                 # The real thing: swap the ecash so the value is genuinely held.
                 held = self._pay_with_token(cashu_token, price, caller)
-            elif not settlement_receipt:
+            elif settlement_receipt:
+                # A settlement receipt is only proof of payment if the service
+                # itself issued it — for THIS caller, worth at least the
+                # price, inside its window, and not spent. Anything else is a
+                # fabricated string and is refused exactly like no payment.
+                if self.settlements is None or not self.settlements.redeem(
+                        settlement_receipt, pubkey=caller, price=price):
+                    raise ToolError(
+                        "bad_settlement",
+                        "Settlement receipt is not valid (unknown, wrong "
+                        "caller, too small, expired, or already used). Pay "
+                        "with a Cashu token or obtain a fresh receipt.",
+                        cap=f"cap:tool:sms.send:{price}:sats", price_sats=price,
+                        pmi="bitcoin-cashu", gating="explicit_gating")
+            else:
                 # No token and no receipt: refuse, loudly and visibly.
                 raise ToolError(
                     "payment_required",

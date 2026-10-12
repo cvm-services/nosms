@@ -26,6 +26,7 @@ from app.cvm import ContractContext
 from app.cvm_tools import CvmTools
 from app.escrow import EscrowStore
 from app.pricing import DEFAULT_PRICE_SATS
+from app.settlements import SettlementStore
 from app.transports import EmailGatewayTransport, FakeTransport
 from tests.stubs import StubMint, make_token
 
@@ -44,13 +45,13 @@ def load_docs(contract_dir: pathlib.Path = CONTRACT) -> dict[str, str]:
 
 
 def tools(transport=None, owners=None, mint=None, escrow=None, tmp_path=None,
-          btc_usd=None, contract_dir=CONTRACT) -> CvmTools:
+          btc_usd=None, contract_dir=CONTRACT, settlements=None) -> CvmTools:
     return CvmTools(
         transport or FakeTransport(), docs=load_docs(contract_dir),
         owner_pubkeys=owners, mint=mint,
         escrow=escrow or EscrowStore(":memory:"),
         contract=ContractContext(npub="npub1testserver", relays=("wss://relay.test",)),
-        btc_usd=btc_usd)
+        btc_usd=btc_usd, settlements=settlements)
 
 
 def payload(result: dict) -> dict:
@@ -165,24 +166,50 @@ def test_already_spent_token_is_refused():
     assert t.transport.sent == []
 
 
-def test_a_settlement_receipt_without_a_token_is_honoured_when_no_mint_is_wired():
-    """The shell may have already escrowed; without a mint we cannot re-swap, so
-    the receipt is accepted rather than the caller being strung along."""
+def test_a_fabricated_settlement_receipt_is_refused_even_without_a_mint():
+    """The pre-2026-10 behaviour — any non-empty string honoured, forever —
+    was a payment bypass (see docs/SECURITY-settlement-receipt-bypass.md).
+    A receipt the service never issued must buy nothing, mint or no mint."""
     t = tools(mint=None)
-    result = t.call("sms.send", {"to": "+15555550100", "body": "hi",
+    result = t.call("sms.send", {"to": "+155****0100", "body": "hi",
                                  "settlement_receipt": "rcpt-1"})
-    assert "isError" not in result, payload(result)
-    assert payload(result)["price_sats"] == PRICE
+    assert_visible_error(result, "bad_settlement")
+    assert t.transport.sent == []
 
 
-def test_one_settlement_receipt_funds_one_send_when_no_mint_is_wired():
+def test_one_real_settlement_receipt_funds_one_send():
+    """A receipt the service ITSELF issued, for this caller, at the price:
+    honoured once, refused the second time."""
+    store = SettlementStore(":memory:")
+    receipt = store.issue(pubkey="ab" * 32, amount=PRICE)
+    t = tools(mint=None, settlements=store)
+    first = t.call("sms.send", {"to": "+155****0100", "body": "a",
+                                "settlement_receipt": receipt}, caller="AB" * 32)
+    assert "isError" not in first, payload(first)
+    second = t.call("sms.send", {"to": "+155****0100", "body": "b",
+                                 "settlement_receipt": receipt}, caller="AB" * 32)
+    assert_visible_error(second, "bad_settlement")
+
+
+def test_someone_elses_settlement_receipt_is_refused():
+    """Receipts are caller-bound: issued for A, worthless to B."""
+    store = SettlementStore(":memory:")
+    receipt = store.issue(pubkey="ab" * 32, amount=PRICE)
+    t = tools(mint=None, settlements=store)
+    result = t.call("sms.send", {"to": "+155****0100", "body": "hi",
+                                 "settlement_receipt": receipt}, caller="CD" * 32)
+    assert_visible_error(result, "bad_settlement")
+    assert t.transport.sent == []
+
+
+def test_no_settlement_store_means_the_receipt_path_fails_closed():
+    """No store wired = no way to verify = refuse. Never assume payment."""
     t = tools(mint=None)
-    assert "isError" not in t.call("sms.send", {"to": "+15555550100", "body": "a",
-                                                "settlement_receipt": "rcpt-1"})
-    second = t.call("sms.send", {"to": "+15555550100", "body": "b",
-                                 "settlement_receipt": "rcpt-1"})
-    # the second send is answered, not attempted twice with nothing to spend
-    assert second["content"]
+    store = SettlementStore(":memory:")
+    receipt = store.issue(pubkey="ab" * 32, amount=PRICE)
+    result = t.call("sms.send", {"to": "+155****0100", "body": "hi",
+                                 "settlement_receipt": receipt}, caller="AB" * 32)
+    assert_visible_error(result, "bad_settlement")
 
 
 # --- owner allowlist -------------------------------------------------------

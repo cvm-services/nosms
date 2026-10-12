@@ -139,7 +139,7 @@ Every refusal is a JSON-RPC `result` carrying `isError: true` and a body with:
   `credentials_encryption_unconfigured`, `token_invalid`,
   `token_unsupported`, `token_empty`, `token_wrong_mint`,
   `token_already_spent`, `token_state_unknown`, `mint_error`,
-  `mint_unreachable`, `not_found`, `unsupported method`.
+  `mint_unreachable`, `bad_settlement`, `not_found`, `unsupported method`.
 - `hint`: one human-readable sentence.
 
 Unknown methods answer with `unsupported method`. A refusal is *always*
