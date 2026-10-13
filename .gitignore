@@ -15,3 +15,7 @@ venv/
 # key in the history is unrecoverable, and the pre-push hook rightly blocks it.
 .cvm-server.nsec
 .cvm-client.nsec
+
+# runtime state - never commit
+cvm-escrow.db
+.worktrees/
