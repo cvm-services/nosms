@@ -1,0 +1,927 @@
+--------- beginning of main
+10-13 16:34:33.694   578  1928 D WifiNl80211Manager: Scan result ready event
+10-13 16:34:33.694   578  1928 D WifiNative: Scan result ready event
+10-13 16:34:37.781   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:34:47.781   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:34:49.099   578   740 E WifiStaIfaceAidlImpl: installApfPacketFilter failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+10-13 16:34:51.692   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:34:54.697   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:34:57.781   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:35:00.003  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:35:00.003  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:35:00.003  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:35:00.003  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:35:00.004  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:35:00.014   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:35:00.016   825   932 D EGL_emulation: app_time_stats: avg=59998.61ms min=59998.61ms max=59998.61ms count=1
+--------- beginning of system
+10-13 16:35:01.475   578   645 I UsageStatsService: User[0] Flushing usage stats to disk
+10-13 16:35:07.793   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:35:07.794   825   932 D EGL_emulation: app_time_stats: avg=7777.98ms min=7777.98ms max=7777.98ms count=1
+10-13 16:35:09.242   578  1254 W ProcessStats: Tracking association SourceState{aa949f6 com.google.android.gms/10127 BFgs #11157} whose proc state 4 is better than process ProcessState{8e1a1f7 com.google.android.gms.unstable/10127 pkg=com.google.android.gms (sub)} proc state 14 (0 skipped)
+10-13 16:35:09.247  9091  9091 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.auth.aang.events.services.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+10-13 16:35:11.023  9091  9091 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.libs.gmscorelogger.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentDirectBootAwareApiService }
+10-13 16:35:17.783   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:35:26.858   578  1885 W ProcessStats: Tracking association SourceState{aa949f6 com.google.android.gms/10127 BFgs #11165} whose proc state 4 is better than process ProcessState{8e1a1f7 com.google.android.gms.unstable/10127 pkg=com.google.android.gms (sub)} proc state 14 (7 skipped)
+10-13 16:35:27.780   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:35:37.781   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:35:37.794   825   932 D EGL_emulation: app_time_stats: avg=29999.93ms min=29999.93ms max=29999.93ms count=1
+10-13 16:35:47.780   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:35:55.201   578   653 W BatteryExternalStatsWorker: error reading Bluetooth stats: 9
+10-13 16:35:55.205   578  1254 D TelephonyManager: requestModemActivityInfo: Sending result to app: ModemActivityInfo{ mTimestamp=3922718 mSleepTimeMs=0 mIdleTimeMs=3922709 mActivityStatsTechSpecificInfo=[{mRat=UNKNOWN,mFrequencyRange=UNKNOWN,mTxTimeMs[]=[0, 0, 0, 0, 0],mRxTimeMs=0}]}
+10-13 16:35:57.779   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:36:00.005  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:36:00.005  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:36:00.005  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:36:00.005  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:36:00.005  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:36:00.014   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:36:00.016   825   932 D EGL_emulation: app_time_stats: avg=22221.74ms min=22221.74ms max=22221.74ms count=1
+10-13 16:36:03.108   825   923 D ControlsListingControllerImpl: Subscribing callback, service count: 0
+10-13 16:36:03.109   825   923 D ControlsListingControllerImpl: Unsubscribing callback
+10-13 16:36:04.743  1533 11090 W BugleRcsEngine: [79] bpxc.w: Unable to send diagnostic log
+10-13 16:36:07.780   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:36:08.232  1483  1707 I AiAiStatsd: No op: the most recent atoms from the date 2026-10-12 have been uploaded.
+10-13 16:36:10.090   578  1885 W ProcessStats: Tracking association SourceState{aa949f6 com.google.android.gms/10127 BFgs #11166} whose proc state 4 is better than process ProcessState{8e1a1f7 com.google.android.gms.unstable/10127 pkg=com.google.android.gms (sub)} proc state 14 (0 skipped)
+10-13 16:36:17.778   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:36:27.779   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:36:37.778   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:36:47.779   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:36:57.778   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:37:00.002  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:37:00.003  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:37:00.003  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:37:00.003  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:37:00.003  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:37:00.014   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:37:00.016   825   932 D EGL_emulation: app_time_stats: avg=60000.18ms min=60000.18ms max=60000.18ms count=1
+10-13 16:37:07.777   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:37:13.706   578  1885 D WifiNl80211Manager: Scan result ready event
+10-13 16:37:13.706   578  1885 D WifiNative: Scan result ready event
+10-13 16:37:17.792   825   832 W ndroid.systemui: Reducing the number of considered missed Gc histogram windows from 151 to 100
+10-13 16:37:17.793   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:37:17.794   825   932 D EGL_emulation: app_time_stats: avg=17777.88ms min=17777.88ms max=17777.88ms count=1
+10-13 16:37:27.777   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:37:37.778   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:37:47.793   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:37:47.794   825   932 D EGL_emulation: app_time_stats: avg=30000.26ms min=30000.26ms max=30000.26ms count=1
+10-13 16:37:57.786   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:38:00.004  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:38:00.004  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:38:00.004  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:38:00.004  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:38:00.005  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:38:00.018   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:38:00.020   825   932 D EGL_emulation: app_time_stats: avg=12225.81ms min=12225.81ms max=12225.81ms count=1
+10-13 16:38:07.777   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:38:17.776   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:38:27.779   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:38:37.775   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:38:42.671   451   475 D AudioAnalytics: expiring previous audio state after 3600 seconds.
+10-13 16:38:47.775   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:38:57.775   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:39:00.003  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:39:00.003  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:39:00.003  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:39:00.003  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:39:00.003  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:39:00.013   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:39:00.015   825   932 D EGL_emulation: app_time_stats: avg=59995.07ms min=59995.07ms max=59995.07ms count=1
+10-13 16:39:07.775   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:39:17.775   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:39:19.855   578   740 E WifiStaIfaceAidlImpl: installApfPacketFilter failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+10-13 16:39:22.084   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:39:25.089   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:39:27.776   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:39:27.777   825   932 D EGL_emulation: app_time_stats: avg=27761.72ms min=27761.72ms max=27761.72ms count=1
+10-13 16:39:37.774   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:39:39.611   578   824 D NetworkStatsObservers: Unregistering RequestInfo from pid/uid:578/1000(android) for DataUsageRequest [ requestId=10, networkTemplate=NetworkTemplate: matchRule=MOBILE, matchSubscriberIds=[310260...], matchWifiNetworkKeys=[], metered=YES, defaultNetwork=NO, thresholdInBytes=4426495 ] accessLevel:3
+10-13 16:39:39.611   578   738 D NetworkStatsObservers: Registering observer for RequestInfo from pid/uid:578/1000(android) for DataUsageRequest [ requestId=11, networkTemplate=NetworkTemplate: matchRule=MOBILE, matchSubscriberIds=[310260...], matchWifiNetworkKeys=[], metered=YES, defaultNetwork=NO, thresholdInBytes=4425631 ] accessLevel:3
+10-13 16:39:40.692   144   152 W vold    : There is no valid blk device path for data partition
+10-13 16:39:40.693   578   578 W StorageManagerService: Failed to get storage write record
+10-13 16:39:40.693   578   578 I SmartStorageMaintIdler: Got smart storage maintenance service completion callback
+10-13 16:39:40.693   578   578 D CompatibilityChangeReporter: Compat change id reported: 253665015; UID 1000; state: ENABLED
+10-13 16:39:40.694   578   578 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 1000; state: ENABLED
+10-13 16:39:40.695   578   578 W Looper  : Slow dispatch took 1103ms main h=android.app.job.JobServiceEngine$JobHandler c=null m=0
+10-13 16:39:40.695   578   578 W Looper  : Slow delivery took 1104ms main h=android.app.job.JobServiceEngine$JobHandler c=null m=0
+10-13 16:39:40.696   578   578 W JobScheduler: Job didn't exist in JobStore: 1d15b76 #1000/2808 android/com.android.server.SmartStorageMaintIdler
+10-13 16:39:40.696   578   578 W Looper  : Drained
+10-13 16:39:47.775   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:39:47.780  1011  1021 W m.android.phone: Reducing the number of considered missed Gc histogram windows from 146 to 100
+10-13 16:39:53.698   578  2334 D WifiNl80211Manager: Scan result ready event
+10-13 16:39:53.698   578  2334 D WifiNative: Scan result ready event
+10-13 16:39:57.774   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:39:57.777   825   932 D EGL_emulation: app_time_stats: avg=29999.94ms min=29999.94ms max=29999.94ms count=1
+10-13 16:40:00.003  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:40:00.003  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:40:00.003  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:40:00.003  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:40:00.004  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:40:00.024   825   932 D EGL_emulation: app_time_stats: avg=2247.36ms min=2247.36ms max=2247.36ms count=1
+10-13 16:40:00.025   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:40:07.774   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:40:12.379   578  1885 W ProcessStats: Tracking association SourceState{aa949f6 com.google.android.gms/10127 BFgs #11173} whose proc state 4 is better than process ProcessState{8e1a1f7 com.google.android.gms.unstable/10127 pkg=com.google.android.gms (sub)} proc state 14 (0 skipped)
+10-13 16:40:13.158   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:40:16.163   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:40:17.776   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:40:19.167   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:40:22.172   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:40:27.773   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:40:37.773   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:40:47.773   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:40:57.773   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:41:00.004  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:41:00.004  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:41:00.004  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:41:00.004  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:41:00.005  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:41:00.014   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:41:00.031   825   932 D EGL_emulation: app_time_stats: avg=60006.62ms min=60006.62ms max=60006.62ms count=1
+10-13 16:41:07.772   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:41:17.772   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:41:27.772   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:41:37.772   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:41:37.778   825   932 D EGL_emulation: app_time_stats: avg=37747.17ms min=37747.17ms max=37747.17ms count=1
+10-13 16:41:47.771   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:41:57.772   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:42:00.003  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:42:00.003  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:42:00.003  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:42:00.003  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:42:00.003  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:42:00.013   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:42:00.015   825   932 D EGL_emulation: app_time_stats: avg=22236.75ms min=22236.75ms max=22236.75ms count=1
+10-13 16:42:07.776   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:42:07.777   825   932 D EGL_emulation: app_time_stats: avg=7762.10ms min=7762.10ms max=7762.10ms count=1
+10-13 16:42:17.771   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:42:27.771   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:42:33.698   578  1885 D WifiNl80211Manager: Scan result ready event
+10-13 16:42:33.698   578  1885 D WifiNative: Scan result ready event
+10-13 16:42:37.770   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:42:47.770   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:42:57.778   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:43:00.003  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:43:00.003  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:43:00.003  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:43:00.003  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:43:00.004  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:43:00.012   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:43:00.015   825   932 D EGL_emulation: app_time_stats: avg=52237.43ms min=52237.43ms max=52237.43ms count=1
+10-13 16:43:07.649 10287 10376 I Finsky  : [47] Stats for Executor: LightweightExecutor yap@8c6b68d[Running, pool size = 2, active threads = 0, queued tasks = 0, completed tasks = 239]
+10-13 16:43:07.655 10287 10376 I Finsky  : [47] Stats for Executor: BlockingExecutor yap@648e042[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 38]
+10-13 16:43:07.663 10287 10376 I Finsky  : [47] Stats for Executor: bgExecutor yap@667c853[Running, pool size = 4, active threads = 0, queued tasks = 0, completed tasks = 189]
+10-13 16:43:07.769   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:43:17.769   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:43:22.721   578   646 W ProcessStats: Tracking association SourceState{aa949f6 com.google.android.gms/10127 BFgs #11174} whose proc state 4 is better than process ProcessState{8e1a1f7 com.google.android.gms.unstable/10127 pkg=com.google.android.gms (sub)} proc state 14 (0 skipped)
+10-13 16:43:23.261   578  2334 W AppOps  : Noting op not finished: uid 10127 pkg com.google.android.gms code 113 startTime of in progress event=1791899402800
+10-13 16:43:23.264   578  2334 W AppOps  : Noting op not finished: uid 10127 pkg com.google.android.gms code 113 startTime of in progress event=1791899402800
+10-13 16:43:23.268   578  1885 W AppOps  : Noting op not finished: uid 10127 pkg com.google.android.gms code 113 startTime of in progress event=1791899402800
+10-13 16:43:23.272   578  2334 W AppOps  : Noting op not finished: uid 10127 pkg com.google.android.gms code 113 startTime of in progress event=1791899402800
+10-13 16:43:23.275  9091  9352 I ActivityScheduler: nextTriggerTime: 4968889, in 598100ms, detectorType: 39, FULL_TYPE alarmWindowMillis: 200000
+10-13 16:43:27.769   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:43:33.492  7291  7339 I Finsky:background: [46] Stats for Executor: bgExecutor yap@706d058[Running, pool size = 4, active threads = 0, queued tasks = 0, completed tasks = 4062]
+10-13 16:43:33.763  7291  7339 I Finsky:background: [46] Stats for Executor: LightweightExecutor yap@ace1617[Running, pool size = 2, active threads = 0, queued tasks = 0, completed tasks = 4877]
+10-13 16:43:33.788  7291  7339 I Finsky:background: [46] Stats for Executor: BlockingExecutor yap@1449a04[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 477]
+10-13 16:43:37.769   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:43:47.769   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:43:47.777   825   932 D EGL_emulation: app_time_stats: avg=47762.57ms min=47762.57ms max=47762.57ms count=1
+10-13 16:43:57.771   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:44:00.003  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:44:00.003  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:44:00.003  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:44:00.003  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:44:00.004  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:44:00.012   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:44:00.028   825   932 D EGL_emulation: app_time_stats: avg=12250.77ms min=12250.77ms max=12250.77ms count=1
+10-13 16:44:07.768   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:44:17.773   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:44:17.797   825   932 D EGL_emulation: app_time_stats: avg=17768.60ms min=17768.60ms max=17768.60ms count=1
+10-13 16:44:27.768   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:44:37.768   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:44:47.767   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:44:57.768   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:45:00.003  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:45:00.003  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:45:00.003  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:45:00.003  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:45:00.004  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:45:00.015   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:45:00.019   825   932 D EGL_emulation: app_time_stats: avg=42221.88ms min=42221.88ms max=42221.88ms count=1
+10-13 16:45:07.767   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:45:13.702   578   880 D WifiNl80211Manager: Scan result ready event
+10-13 16:45:13.702   578   880 D WifiNative: Scan result ready event
+10-13 16:45:17.412   578   880 W ProcessStats: Tracking association SourceState{aa949f6 com.google.android.gms/10127 BFgs #11186} whose proc state 4 is better than process ProcessState{8e1a1f7 com.google.android.gms.unstable/10127 pkg=com.google.android.gms (sub)} proc state 14 (11 skipped)
+10-13 16:45:17.768   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:45:27.767   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:45:37.768   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:45:47.767   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:45:57.776   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:45:57.777   825   932 D EGL_emulation: app_time_stats: avg=57758.39ms min=57758.39ms max=57758.39ms count=1
+10-13 16:46:00.003  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:46:00.003  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:46:00.003  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:46:00.003  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:46:00.004  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:46:00.012   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:46:00.015   825   932 D EGL_emulation: app_time_stats: avg=2237.47ms min=2237.47ms max=2237.47ms count=1
+10-13 16:46:03.114   825   923 D ControlsListingControllerImpl: Subscribing callback, service count: 0
+10-13 16:46:03.118   825   923 D ControlsListingControllerImpl: Unsubscribing callback
+10-13 16:46:04.559   578   740 E WifiStaIfaceAidlImpl: installApfPacketFilter failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+10-13 16:46:04.650   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:46:07.655   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:46:07.766   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:46:17.766   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:46:27.776   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:46:27.779   825   932 D EGL_emulation: app_time_stats: avg=27763.97ms min=27763.97ms max=27763.97ms count=1
+10-13 16:46:37.766   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:46:47.765   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:46:57.765   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:47:00.004  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:47:00.004  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:47:00.004  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:47:00.004  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:47:00.005  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:47:00.013   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:47:00.018   825   932 D EGL_emulation: app_time_stats: avg=32239.63ms min=32239.63ms max=32239.63ms count=1
+10-13 16:47:07.764   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:47:17.764   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:47:27.764   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:47:37.765   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:47:47.764   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:47:53.702   578  1254 D WifiNl80211Manager: Scan result ready event
+10-13 16:47:53.702   578  1254 D WifiNative: Scan result ready event
+10-13 16:47:57.764   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:48:00.002  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:48:00.003  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:48:00.003  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:48:00.003  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:48:00.003  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:48:00.014   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:48:00.015  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:48:00.015  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:48:00.015  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:48:00.015  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:48:00.016  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:48:00.016   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:48:00.017   825   932 D EGL_emulation: app_time_stats: avg=59998.01ms min=59998.01ms max=59998.01ms count=1
+10-13 16:48:07.764   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:48:07.778   825   932 D EGL_emulation: app_time_stats: avg=7761.29ms min=7761.29ms max=7761.29ms count=1
+10-13 16:48:17.763   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:48:27.763   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:48:37.763   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:48:37.777   825   932 D EGL_emulation: app_time_stats: avg=29999.13ms min=29999.13ms max=29999.13ms count=1
+10-13 16:48:47.763   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:48:57.762   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:49:00.002  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:49:00.002  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:49:00.002  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:49:00.002  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:49:00.003  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:49:00.013   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:49:00.015   825   932 D EGL_emulation: app_time_stats: avg=22237.66ms min=22237.66ms max=22237.66ms count=1
+10-13 16:49:05.487   578   687 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 10128; state: DISABLED
+10-13 16:49:05.487   578   687 D CompatibilityChangeReporter: Compat change id reported: 177438394; UID 10128; state: DISABLED
+10-13 16:49:05.487   578   687 D CompatibilityChangeReporter: Compat change id reported: 135772972; UID 10128; state: DISABLED
+10-13 16:49:05.487   578   687 D CompatibilityChangeReporter: Compat change id reported: 135754954; UID 10128; state: ENABLED
+10-13 16:49:05.488   578   647 D CompatibilityChangeReporter: Compat change id reported: 143937733; UID 10128; state: ENABLED
+10-13 16:49:05.497   374   374 D Zygote  : Forked child process 11106
+10-13 16:49:05.503   578   687 D ActivityManager: sync unfroze 10762 com.google.android.apps.photos for 6
+10-13 16:49:05.519   578   687 D ActivityManager: sync unfroze 11022 com.google.process.gservices for 6
+10-13 16:49:05.519   578   687 W ProcessStats: Tracking association SourceState{7642abf com.google.android.apps.photos/10147 ImpBg #11187} whose proc state 6 is better than process ProcessState{492ca69 com.google.process.gservices/10127 pkg=com.google.android.gsf} proc state 14 (0 skipped)
+10-13 16:49:05.521   578   647 I ActivityManager: Start proc 11106:com.google.android.partnersetup/u0a128 for service {com.google.android.partnersetup/com.google.android.partnersetup.InstalledAppJobService}
+10-13 16:49:05.528  2346  2346 I BgTaskExecutorImpl: Starting EXCLUSIVE background task UPLOAD_ASSISTANT_DEVICE_SETTINGS.
+10-13 16:49:05.542 11022 11028 W ocess.gservices: Reducing the number of considered missed Gc histogram windows from 194 to 100
+10-13 16:49:05.550  2346 11109 I NetworkRecognitionRnr: Using pair HTTP connection
+10-13 16:49:05.550  2346 11110 W LocationOracle: getBestLocation(): no location is available
+10-13 16:49:05.553  2346 11112 I A       : [Upload] Connected
+10-13 16:49:05.556  2346  2346 E A       : onError
+10-13 16:49:05.556  2346  2346 E A       : com.google.android.apps.gsa.shared.speech.a.m: errorCode: 65561, engine: 2
+10-13 16:49:05.556  2346  2346 E A       : 	at com.google.android.apps.gsa.staticplugins.dc.a.e.a(PG:3)
+10-13 16:49:05.556  2346  2346 E A       : 	at com.google.android.apps.gsa.s3.n.hh(PG:1)
+10-13 16:49:05.556  2346  2346 E A       : 	at com.google.cd.g.a.f.e(PG:2)
+10-13 16:49:05.556  2346  2346 E A       : 	at com.google.android.apps.gsa.speech.k.a.g.d(PG:22)
+10-13 16:49:05.556  2346  2346 E A       : 	at com.google.android.apps.gsa.speech.k.a.g.ks(PG:6)
+10-13 16:49:05.556  2346  2346 E A       : 	at com.google.android.apps.gsa.s3.o.e(PG:14)
+10-13 16:49:05.556  2346  2346 E A       : 	at com.google.android.apps.gsa.s3.p.run(PG:1)
+10-13 16:49:05.556  2346  2346 E A       : 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:487)
+10-13 16:49:05.556  2346  2346 E A       : 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+10-13 16:49:05.556  2346  2346 E A       : 	at com.google.android.apps.gsa.shared.util.c.a.e.run(PG:2)
+10-13 16:49:05.556  2346  2346 E A       : 	at com.google.android.apps.gsa.shared.util.c.a.bi.run(PG:1)
+10-13 16:49:05.556  2346  2346 E A       : 	at com.google.android.apps.gsa.shared.util.c.a.bi.run(PG:1)
+10-13 16:49:05.556  2346  2346 E A       : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-13 16:49:05.556  2346  2346 E A       : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-13 16:49:05.556  2346  2346 E A       : 	at java.lang.Thread.run(Thread.java:1012)
+10-13 16:49:05.556  2346  2346 E A       : 	at com.google.android.apps.gsa.shared.util.c.a.l.run(PG:5)
+10-13 16:49:05.556  2346  2346 E A       : Caused by: com.google.android.apps.gsa.shared.speech.a.o: errorCode: 65586, engine: 2
+10-13 16:49:05.556  2346  2346 E A       : 	... 15 more
+10-13 16:49:05.556  2346  2346 E A       : Caused by: com.google.android.apps.gsa.shared.speech.a.k: errorCode: 401, engine: 2
+10-13 16:49:05.556  2346  2346 E A       : 	at com.google.android.apps.gsa.assistant.shared.n.h.a(PG:5)
+10-13 16:49:05.556  2346  2346 E A       : 	at com.google.android.apps.gsa.s3.producers.j.hE(PG:2)
+10-13 16:49:05.556  2346  2346 E A       : 	at com.google.android.apps.gsa.speech.k.a.g.d(PG:16)
+10-13 16:49:05.556  2346  2346 E A       : 	... 12 more
+10-13 16:49:05.557  2346  2585 W CronetNetworkRqstWrppr: Upload request without a content type.
+10-13 16:49:05.564  2346 11112 I NetworkRecognitionRnr: Using pair HTTP connection
+10-13 16:49:05.566  2346 11110 I A       : [Upload] Connected
+10-13 16:49:05.567  2346  2346 W A       : Failed to sync device settings.
+10-13 16:49:06.108   578   628 W system_server: Reducing the number of considered missed Gc histogram windows from 156 to 100
+10-13 16:49:06.550 11106 11106 I id.partnersetup: Using CollectorTypeCC GC.
+10-13 16:49:06.551 11106 11106 W id.partnersetup: Unexpected CPU variant for x86: x86_64.
+10-13 16:49:06.551 11106 11106 W id.partnersetup: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+10-13 16:49:06.554 11106 11106 E id.partnersetup: Not starting debugger since process cannot load the jdwp agent.
+10-13 16:49:06.561   578  1817 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 10128; state: DISABLED
+10-13 16:49:06.561   578  1817 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 10128; state: DISABLED
+10-13 16:49:06.564 11106 11106 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10128; state: ENABLED
+10-13 16:49:06.564 11106 11106 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10128; state: ENABLED
+10-13 16:49:06.565   578   687 D CompatibilityChangeReporter: Compat change id reported: 265195908; UID 10128; state: ENABLED
+10-13 16:49:06.567   578  1817 D CompatibilityChangeReporter: Compat change id reported: 170503758; UID 10128; state: ENABLED
+10-13 16:49:07.572   578  1817 D ConnectivityService: requestNetwork for uid/pid:10132/2346 activeRequest: null callbackRequest: 282 [NetworkRequest [ REQUEST id=282, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&NOT_VCN_MANAGED Uid: 10132 RequestorUid: 10132 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+10-13 16:49:07.582   578   747 D ConnectivityService: NetReassign [282 : null → 100] [c 0] [a 8] [i 1]
+10-13 16:49:07.582   578   747 D ConnectivityService: reportNetworkConnectivity(101, false) by 10132
+10-13 16:49:07.582   890  1599 D NetworkMonitor/101: Forcing reevaluation for UID 10132. Dns signal count: 0
+10-13 16:49:07.584   890 11128 D TrafficStats: tagSocket(5) with statsTag=0xffffff81, statsUid=-1
+10-13 16:49:07.585   890 11128 D TrafficStats: tagSocket(5) with statsTag=0xffffff81, statsUid=-1
+10-13 16:49:07.587   890 11127 D TrafficStats: tagSocket(68) with statsTag=0xffffff81, statsUid=-1
+10-13 16:49:07.593   890 11127 D TrafficStats: tagSocket(68) with statsTag=0xffffff81, statsUid=-1
+10-13 16:49:07.601   890   890 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-13 16:49:07.601   578  2334 W JobScheduler: Job didn't exist in JobStore: db49b6a #u0a132/-353 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService
+10-13 16:49:07.601   890   890 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-13 16:49:07.602   890   890 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-13 16:49:07.602   890   890 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-13 16:49:07.603   890   890 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-13 16:49:07.604   890   890 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-13 16:49:07.604   890   890 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-13 16:49:07.605   890   890 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-13 16:49:07.605   890   890 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-13 16:49:07.606   890   890 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-13 16:49:07.606   890   890 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-13 16:49:07.607   890   890 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-13 16:49:07.608   890   890 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-13 16:49:07.609   890   890 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-13 16:49:07.610   890   890 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-13 16:49:07.610   890   890 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-13 16:49:07.611   890 11127 D NetworkMonitor/101: PROBE_DNS www.google.com 24ms OK 142.251.151.119,142.251.156.119,142.251.154.119,142.251.150.119,142.251.157.119,142.251.155.119,142.251.153.119,142.251.152.119,2001:4860:482c:7700::,2001:4860:482b:7700::,2001:4860:482d:7700::,2001:4860:4828:7700::,2001:4860:4827:7700::,2001:4860:4829:7700::,2001:4860:482a:7700::,2001:4860:4826:7700::
+10-13 16:49:07.615   890 11127 D TrafficStats: tagSocket(68) with statsTag=0xffffff81, statsUid=-1
+10-13 16:49:07.762   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:49:07.839   890   890 D TrafficStats: tagSocket(5) with statsTag=0xffffffff, statsUid=-1
+10-13 16:49:07.839   890   890 D TrafficStats: tagSocket(5) with statsTag=0xffffffff, statsUid=-1
+10-13 16:49:07.841 11106 11106 D nativeloader: Configuring clns-6 for other apk /system/framework/org.apache.http.legacy.jar. target_sdk_version=36, uses_libraries=ALL, library_path=/data/app/~~JbCflHh0NilLGMjB9NCuWA==/com.google.android.partnersetup-a2zz3sp2-Jl12hGZdVzMDA==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.partnersetup
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: EXCLUSIVE background task UPLOAD_ASSISTANT_DEVICE_SETTINGS failed. Crashing.
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: com.google.android.apps.gsa.shared.speech.a.o: errorCode: 65586, engine: 2
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: 	at com.google.android.apps.gsa.s3.n.hh(PG:1)
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: 	at com.google.cd.g.a.f.e(PG:2)
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: 	at com.google.android.apps.gsa.speech.k.a.g.d(PG:22)
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: 	at com.google.android.apps.gsa.speech.k.a.g.ks(PG:6)
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: 	at com.google.android.apps.gsa.s3.o.e(PG:14)
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: 	at com.google.android.apps.gsa.s3.p.run(PG:1)
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:487)
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: 	at com.google.android.apps.gsa.shared.util.c.a.e.run(PG:2)
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: 	at com.google.android.apps.gsa.shared.util.c.a.bi.run(PG:1)
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: 	at com.google.android.apps.gsa.shared.util.c.a.bi.run(PG:1)
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: 	at java.lang.Thread.run(Thread.java:1012)
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: 	at com.google.android.apps.gsa.shared.util.c.a.l.run(PG:5)
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: Caused by: com.google.android.apps.gsa.shared.speech.a.k: errorCode: 401, engine: 2
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: 	at com.google.android.apps.gsa.assistant.shared.n.h.a(PG:5)
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: 	at com.google.android.apps.gsa.s3.producers.j.hE(PG:2)
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: 	at com.google.android.apps.gsa.speech.k.a.g.d(PG:16)
+10-13 16:49:07.843  2346 11109 E BgTaskExecutorImpl: 	... 12 more
+10-13 16:49:07.844   890 11128 D NetworkMonitor/101: PROBE_DNS connectivitycheck.gstatic.com 260ms OK 142.251.150.120,2a00:1450:4013:c24::5e
+10-13 16:49:07.849   890 11128 D TrafficStats: tagSocket(5) with statsTag=0xffffff81, statsUid=-1
+10-13 16:49:07.924   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:49:08.080  9091 10442 I NearbySharing: Network state changed: NetworkState(isRestricted=false, isOnline=true, isCongested=false, isMetered=false, isWifiConnected=true)
+10-13 16:49:08.664   890 11127 D NetworkMonitor/101: PROBE_HTTPS https://www.google.com/generate_204 time=1052ms ret=204 request={Connection=[close], User-Agent=[Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.32 Safari/537.36]} headers={null=[HTTP/1.1 204 No Content], Alt-Svc=[h3=":443"; ma=2592000,h3-29=":443"; ma=2592000], Connection=[close], Content-Length=[0], Cross-Origin-Resource-Policy=[cross-origin], Date=[Tue, 13 Oct 2026 14:49:08 GMT], X-Android-Received-Millis=[1791902948662], X-Android-Response-Source=[NETWORK 204], X-Android-Selected-Protocol=[http/1.1], X-Android-Sent-Millis=[1791902948505]}
+10-13 16:49:08.664   890 11128 D NetworkMonitor/101: PROBE_HTTP http://connectivitycheck.gstatic.com/generate_204 time=816ms ret=204 request={Connection=[close], User-Agent=[Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.32 Safari/537.36]} headers={null=[HTTP/1.1 204 No Content], Connection=[close], Content-Length=[0], Cross-Origin-Resource-Policy=[cross-origin], Date=[Tue, 13 Oct 2026 14:49:08 GMT], X-Android-Received-Millis=[1791902948663], X-Android-Response-Source=[NETWORK 204], X-Android-Selected-Protocol=[http/1.1], X-Android-Sent-Millis=[1791902948502]}
+10-13 16:49:08.665   890 11126 D NetworkMonitor/101: isCaptivePortal: isSuccessful()=true isPortal()=false RedirectUrl=null isPartialConnectivity()=false Time=1082ms
+10-13 16:49:08.666   578   747 D ConnectivityService: [101 WIFI] validation passed
+10-13 16:49:09.033 11106 11106 W ziparchive: Unable to open '/data/app/~~JbCflHh0NilLGMjB9NCuWA==/com.google.android.partnersetup-a2zz3sp2-Jl12hGZdVzMDA==/split_config.de.dm': No such file or directory
+10-13 16:49:09.033 11106 11106 W ziparchive: Unable to open '/data/app/~~JbCflHh0NilLGMjB9NCuWA==/com.google.android.partnersetup-a2zz3sp2-Jl12hGZdVzMDA==/split_config.de.dm': No such file or directory
+10-13 16:49:09.033 11106 11106 W id.partnersetup: Entry not found
+10-13 16:49:09.034 11106 11106 W ziparchive: Unable to open '/data/app/~~JbCflHh0NilLGMjB9NCuWA==/com.google.android.partnersetup-a2zz3sp2-Jl12hGZdVzMDA==/split_config.en.dm': No such file or directory
+10-13 16:49:09.034 11106 11106 W ziparchive: Unable to open '/data/app/~~JbCflHh0NilLGMjB9NCuWA==/com.google.android.partnersetup-a2zz3sp2-Jl12hGZdVzMDA==/split_config.en.dm': No such file or directory
+10-13 16:49:09.034 11106 11106 W id.partnersetup: Entry not found
+10-13 16:49:09.034 11106 11106 W ziparchive: Unable to open '/data/app/~~JbCflHh0NilLGMjB9NCuWA==/com.google.android.partnersetup-a2zz3sp2-Jl12hGZdVzMDA==/split_config.xxhdpi.dm': No such file or directory
+10-13 16:49:09.034 11106 11106 W ziparchive: Unable to open '/data/app/~~JbCflHh0NilLGMjB9NCuWA==/com.google.android.partnersetup-a2zz3sp2-Jl12hGZdVzMDA==/split_config.xxhdpi.dm': No such file or directory
+10-13 16:49:09.035 11106 11106 W id.partnersetup: Entry not found
+10-13 16:49:09.035 11106 11106 D nativeloader: Configuring clns-7 for other apk /data/app/~~JbCflHh0NilLGMjB9NCuWA==/com.google.android.partnersetup-a2zz3sp2-Jl12hGZdVzMDA==/base.apk:/data/app/~~JbCflHh0NilLGMjB9NCuWA==/com.google.android.partnersetup-a2zz3sp2-Jl12hGZdVzMDA==/split_config.de.apk:/data/app/~~JbCflHh0NilLGMjB9NCuWA==/com.google.android.partnersetup-a2zz3sp2-Jl12hGZdVzMDA==/split_config.en.apk:/data/app/~~JbCflHh0NilLGMjB9NCuWA==/com.google.android.partnersetup-a2zz3sp2-Jl12hGZdVzMDA==/split_config.xxhdpi.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~JbCflHh0NilLGMjB9NCuWA==/com.google.android.partnersetup-a2zz3sp2-Jl12hGZdVzMDA==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.partnersetup
+10-13 16:49:09.723 11106 11106 V GraphicsEnvironment: Currently set values for:
+10-13 16:49:09.723 11106 11106 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-13 16:49:09.723 11106 11106 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-13 16:49:09.723 11106 11106 V GraphicsEnvironment: ANGLE GameManagerService for com.google.android.partnersetup: false
+10-13 16:49:09.723 11106 11106 V GraphicsEnvironment: com.google.android.partnersetup is not listed in per-application setting
+10-13 16:49:09.723 11106 11106 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-13 16:49:09.778  2346 11111 W A       : [Download] response code: 400
+10-13 16:49:10.193 11106 11106 W id.partnersetup: Method void xz.c(android.app.Activity) failed lock verification and will run slower.
+10-13 16:49:10.193 11106 11106 W id.partnersetup: Common causes for lock verification issues are non-optimized dex code
+10-13 16:49:10.193 11106 11106 W id.partnersetup: and incorrect proguard optimizations.
+10-13 16:49:10.196 11106 11106 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10128; state: ENABLED
+10-13 16:49:10.196 11106 11106 D CompatibilityChangeReporter: Compat change id reported: 253665015; UID 10128; state: ENABLED
+10-13 16:49:10.197   578  1254 D CompatibilityChangeReporter: Compat change id reported: 253665015; UID 10128; state: ENABLED
+10-13 16:49:10.197   578  1254 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10128; state: ENABLED
+10-13 16:49:10.199   578  1254 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10128. pid: 11106
+10-13 16:49:10.310   578  1817 D CompatibilityChangeReporter: Compat change id reported: 261072174; UID 10128; state: ENABLED
+10-13 16:49:10.323 11106 11106 I GooglePartnerSetup: Phenotype client.register successes
+10-13 16:49:10.342   578  1817 W JobScheduler: Job didn't exist in JobStore: 14b1970 #u0a128/4096 com.google.android.partnersetup/.InstalledAppJobService
+10-13 16:49:10.748 11106 11148 I GooglePartnerSetup: Phenotype commit successes
+10-13 16:49:10.867   578  1254 D ActivityManager: sync unfroze 10499 com.google.process.gapps for 7
+10-13 16:49:10.884 10499 10505 W e.process.gapps: Reducing the number of considered missed Gc histogram windows from 341 to 100
+10-13 16:49:11.342  1011  1011 D CarrierSvcBindHelper: onPackageModified: com.google.android.youtube
+10-13 16:49:11.353  1011  1011 D CarrierSvcBindHelper: No carrier app for: 0
+10-13 16:49:11.363   825   825 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-13 16:49:11.378 10287 10287 I Finsky  : [2] annt - Received: android.intent.action.PACKAGE_CHANGED, [jOtvpLd-8GmSv6I0MyBORIAjNRMjeLFsdBZHGz7qh5o]
+10-13 16:49:11.384  7291  7291 I Finsky:background: [2] annj - Received: android.intent.action.PACKAGE_CHANGED, [jOtvpLd-8GmSv6I0MyBORIAjNRMjeLFsdBZHGz7qh5o]
+10-13 16:49:11.387   578   809 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 10169; state: DISABLED
+10-13 16:49:11.387   578   809 D CompatibilityChangeReporter: Compat change id reported: 177438394; UID 10169; state: DISABLED
+10-13 16:49:11.387   578   809 D CompatibilityChangeReporter: Compat change id reported: 135772972; UID 10169; state: DISABLED
+10-13 16:49:11.387   578   809 D CompatibilityChangeReporter: Compat change id reported: 135754954; UID 10169; state: ENABLED
+10-13 16:49:11.388   578   647 D CompatibilityChangeReporter: Compat change id reported: 143937733; UID 10169; state: ENABLED
+10-13 16:49:11.394   374   374 D Zygote  : Forked child process 11153
+10-13 16:49:11.395   578   647 I ActivityManager: Start proc 11153:com.google.android.permissioncontroller/u0a169 for service {com.google.android.permissioncontroller/com.android.permissioncontroller.permission.service.PermissionControllerServiceImpl}
+10-13 16:49:11.396   578   696 I RoleService: Granting default roles...
+10-13 16:49:11.409   578   687 D CompatibilityChangeReporter: Compat change id reported: 218533173; UID 10139; state: ENABLED
+10-13 16:49:11.428  9091 11162 I Fitness : (REDACTED) OnPackageChangedOperation got intent: %s
+10-13 16:49:11.440  1011  1228 D ImsResolver: maybeAddedImsService, packageName: com.google.android.youtube
+10-13 16:49:11.453  9091 11163 I Fitness : (REDACTED) FitCleanupIntentOperation received Intent %s
+10-13 16:49:11.472  9091 11164 I Fitness : (REDACTED) OnPackageChangedOperation got intent: %s
+10-13 16:49:11.505  7291  7361 I Finsky:background: [56] RECEIVER_PACKAGE_MONITOR_BACKGROUND#logWorkEndAndFinishGoAsync: SUCCESS
+10-13 16:49:11.512  7291 11168 I Finsky:background: [264] Wrote row to frosting DB: 500
+10-13 16:49:11.517  7291 11168 I Finsky:background: [264] Wrote row to frosting DB: 501
+10-13 16:49:11.520  9091 11166 I Fitness : (REDACTED) FitCleanupIntentOperation received Intent %s
+10-13 16:49:11.534 11153 11153 I ssioncontroller: Using CollectorTypeCC GC.
+10-13 16:49:11.536 11153 11153 W ssioncontroller: Unexpected CPU variant for x86: x86_64.
+10-13 16:49:11.536 11153 11153 W ssioncontroller: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+10-13 16:49:11.540 11153 11153 E ssioncontroller: Not starting debugger since process cannot load the jdwp agent.
+10-13 16:49:11.560   578  1817 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 10169; state: DISABLED
+10-13 16:49:11.560   578  1817 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 10169; state: DISABLED
+10-13 16:49:11.561   578   687 D CompatibilityChangeReporter: Compat change id reported: 265195908; UID 10169; state: ENABLED
+10-13 16:49:11.566 11153 11153 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10169; state: ENABLED
+10-13 16:49:11.566 11153 11153 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10169; state: ENABLED
+10-13 16:49:11.569   578  1817 D CompatibilityChangeReporter: Compat change id reported: 170503758; UID 10169; state: ENABLED
+10-13 16:49:11.571 11153 11153 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+10-13 16:49:11.571 11153 11153 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+10-13 16:49:11.771 11153 11153 D nativeloader: Configuring clns-shared-6 for other apk /system/framework/org.apache.http.legacy.jar. target_sdk_version=34, uses_libraries=ALL, library_path=/apex/com.android.permission/priv-app/GooglePermissionController@340818080/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user_de/0/com.google.android.permissioncontroller:/apex/com.android.permission/priv-app/GooglePermissionController@340818080:/system/lib64:/system_ext/lib64
+10-13 16:49:11.776   578   707 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
+10-13 16:49:11.791  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():212 refreshing devices
+10-13 16:49:11.791  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():224 device AT Translated Set 2 keyboard added
+10-13 16:49:11.791  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():212 refreshing devices
+10-13 16:49:11.791  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():224 device AT Translated Set 2 keyboard added
+10-13 16:49:11.791  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():212 refreshing devices
+10-13 16:49:11.791  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():224 device AT Translated Set 2 keyboard added
+10-13 16:49:11.791  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():212 refreshing devices
+10-13 16:49:11.791  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():224 device AT Translated Set 2 keyboard added
+10-13 16:49:11.793  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():212 refreshing devices
+10-13 16:49:11.793  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():224 device AT Translated Set 2 keyboard added
+10-13 16:49:11.793  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():212 refreshing devices
+10-13 16:49:11.793  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():224 device AT Translated Set 2 keyboard added
+10-13 16:49:11.793  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():212 refreshing devices
+10-13 16:49:11.793  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():224 device AT Translated Set 2 keyboard added
+10-13 16:49:11.793  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():212 refreshing devices
+10-13 16:49:11.793  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():224 device AT Translated Set 2 keyboard added
+10-13 16:49:11.793  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():212 refreshing devices
+10-13 16:49:11.793  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():224 device AT Translated Set 2 keyboard added
+10-13 16:49:11.794  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():212 refreshing devices
+10-13 16:49:11.794  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():224 device AT Translated Set 2 keyboard added
+10-13 16:49:11.794  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():212 refreshing devices
+10-13 16:49:11.795  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():224 device AT Translated Set 2 keyboard added
+10-13 16:49:11.795  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():212 refreshing devices
+10-13 16:49:11.795  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():224 device AT Translated Set 2 keyboard added
+10-13 16:49:11.796  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():212 refreshing devices
+10-13 16:49:11.796  1315  1315 I PkModeUpdater: PkModeUpdater.refreshDevices():224 device AT Translated Set 2 keyboard added
+10-13 16:49:11.987  9091  9091 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.feedback.internal.IFeedbackService dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+10-13 16:49:11.988  9091  9091 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.feedback.internal.IFeedbackService dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+10-13 16:49:11.991  9091  9091 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+10-13 16:49:11.993  9091  9091 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+10-13 16:49:12.132  7291  7361 I Finsky:background: [56] RECEIVER_ENGAGE_PACKAGE_CHANGED#logWorkEndAndFinishGoAsync: SKIPPED_PRECONDITIONS_UNMET
+10-13 16:49:12.138 10287 10377 I Finsky  : [48] RECEIVER_PACKAGE_MONITOR#logWorkEndAndFinishGoAsync: SUCCESS
+10-13 16:49:12.151   578   645 W WindowMagnificationMgr: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+10-13 16:49:12.213  7291  7297 W ding:background: Reducing the number of considered missed Gc histogram windows from 345 to 100
+10-13 16:49:12.327 11153 11153 D nativeloader: Configuring clns-shared-7 for other apk /apex/com.android.permission/priv-app/GooglePermissionController@340818080/GooglePermissionController.apk. target_sdk_version=34, uses_libraries=, library_path=/apex/com.android.permission/priv-app/GooglePermissionController@340818080/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user_de/0/com.google.android.permissioncontroller:/apex/com.android.permission/priv-app/GooglePermissionController@340818080:/system/lib64:/system_ext/lib64
+10-13 16:49:12.329 11153 11153 D nativeloader: InitApexLibraries:
+10-13 16:49:12.329 11153 11153 D nativeloader:   com_android_adservices: libhpke_jni.so:libtflite_support_classifiers_native.so
+10-13 16:49:12.329 11153 11153 D nativeloader:   com_android_appsearch: libicing.so
+10-13 16:49:12.329 11153 11153 D nativeloader:   com_android_art: libartservice.so
+10-13 16:49:12.329 11153 11153 D nativeloader:   com_android_btservices: libbluetooth_jni.so
+10-13 16:49:12.329 11153 11153 D nativeloader:   com_android_conscrypt: libjavacrypto.so
+10-13 16:49:12.329 11153 11153 D nativeloader:   com_android_extservices: libtflite_support_classifiers_native.so
+10-13 16:49:12.329 11153 11153 D nativeloader:   com_android_os_statsd: libstats_jni.so
+10-13 16:49:12.329 11153 11153 D nativeloader:   com_android_tethering: libandroid_net_connectivity_com_android_net_module_util_jni.so:libcronet.114.0.5735.84.so:libframework-connectivity-jni.so:libframework-connectivity-tiramisu-jni.so:libservice-connectivity.so
+10-13 16:49:12.329 11153 11153 D nativeloader:   com_android_uwb: libuwb_uci_jni_rust.so
+10-13 16:49:12.329 11153 11153 D nativeloader:   com_android_virt: libvirtualizationservice_jni.so:libvirtualmachine_jni.so
+10-13 16:49:12.367 11153 11153 V GraphicsEnvironment: Currently set values for:
+10-13 16:49:12.367 11153 11153 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-13 16:49:12.367 11153 11153 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-13 16:49:12.367 11153 11153 V GraphicsEnvironment: ANGLE GameManagerService for com.google.android.permissioncontroller: false
+10-13 16:49:12.367 11153 11153 V GraphicsEnvironment: com.google.android.permissioncontroller is not listed in per-application setting
+10-13 16:49:12.367 11153 11153 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-13 16:49:12.963 11153 11188 I carui   : CarUi plugin is disabled
+10-13 16:49:13.002   578  1254 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10169. pid: 11153
+10-13 16:49:13.010 11153 11183 I PermissionControllerServiceImpl: Updating user sensitive for uid 10139
+10-13 16:49:13.501 11153 11189 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.google.android.gms.supervision, role: android.app.role.SYSTEM_SUPERVISION
+10-13 16:49:13.503 11153 11189 I Role    : com.google.android.gms not qualified for android.app.role.SYSTEM_CALL_STREAMING due to missing RequiredComponent{mIntentFilterData=IntentFilterData{mAction='android.telecom.CallStreamingService', mCategories='[]', mDataScheme='null', mDataType='null'}, mMinTargetSdkVersion=1, mFlags='0', mPermission='android.permission.BIND_CALL_STREAMING_SERVICE', mQueryFlags=0, mMetaData=[]}
+10-13 16:49:13.503 11153 11189 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.google.android.gms, role: android.app.role.SYSTEM_CALL_STREAMING
+10-13 16:49:13.505 11153 11189 W Role    : Default holder doesn't have required signing certificate: com.google.android.apps.work.clouddpc:23962F4B43B9857638EA66F4D419518EAE282491ACDA4B94707BD59003C45E58
+10-13 16:49:13.539   578  1254 D CompatibilityChangeReporter: Compat change id reported: 161145287; UID 10169; state: ENABLED
+10-13 16:49:13.589   578   645 E system_server: No package ID 7f found for resource ID 0x7f080625.
+10-13 16:49:13.589   578   645 E system_server: No package ID 7f found for resource ID 0x7f140d34.
+10-13 16:49:13.590   578   645 E system_server: No package ID 7f found for resource ID 0x7f080623.
+10-13 16:49:13.590   578   645 E system_server: No package ID 7f found for resource ID 0x7f140ce8.
+10-13 16:49:13.590   578   645 E system_server: No package ID 7f found for resource ID 0x7f080627.
+10-13 16:49:13.590   578   645 E system_server: No package ID 7f found for resource ID 0x7f140eae.
+10-13 16:49:13.733   578   645 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.google.android.youtube/com.google.android.apps.youtube.app.widget.YtQuickActionsWidgetProvider} won't be persisted.
+10-13 16:49:13.733   578   645 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.google.android.youtube/com.google.android.apps.youtube.app.widget.YtSearchWidgetProvider} won't be persisted.
+10-13 16:49:13.736  1483  1483 I AiAiEcho: AppFetcherImpl onPackageChanged com.google.android.youtube.
+10-13 16:49:13.739  1483 11198 I AiAiEcho: AppIndexer Package:[com.google.android.youtube] UserProfile:[0] Enabled:[true].
+10-13 16:49:13.739  1483 11198 I AiAiEcho: AppFetcherImplV2 updateApps package:[com.google.android.youtube], userId:[0], reason:[package is updated.].
+10-13 16:49:13.932   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:49:15.558   578   695 D ActivityManager: freezing 10762 com.google.android.apps.photos
+10-13 16:49:16.875   578   645 W ProcessStats: Tracking association SourceState{aa949f6 com.google.android.gms/10127 BFgs #11293} whose proc state 4 is better than process ProcessState{8e1a1f7 com.google.android.gms.unstable/10127 pkg=com.google.android.gms (sub)} proc state 14 (93 skipped)
+10-13 16:49:17.192 11106 11147 D CompatibilityChangeReporter: Compat change id reported: 183155436; UID 10128; state: ENABLED
+10-13 16:49:17.205   578   989 D CompatibilityChangeReporter: Compat change id reported: 161145287; UID 10128; state: ENABLED
+10-13 16:49:17.281 11106 11201 I FlightRecordReaderImpl: Failed to find any valid flight records for process id 8381
+10-13 16:49:17.362 11106 11123 V ClearcutMetricXmitter: Transmission is done.
+10-13 16:49:17.363 11106 11123 V ClearcutMetricXmitter: Transmission is done.
+10-13 16:49:17.762   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:49:21.646   578   695 D ActivityManager: freezing 11106 com.google.android.partnersetup
+10-13 16:49:21.647   578   695 D ActivityManager: freezing 10499 com.google.process.gapps
+10-13 16:49:21.647   578   695 D ActivityManager: freezing 11022 com.google.process.gservices
+10-13 16:49:23.560   578   809 D CompatibilityChangeReporter: Compat change id reported: 261072174; UID 1000; state: ENABLED
+10-13 16:49:27.067   578  1254 D CompatibilityChangeReporter: Compat change id reported: 261072174; UID 10127; state: ENABLED
+10-13 16:49:27.067   578  1254 D CompatibilityChangeReporter: Compat change id reported: 261072174; UID 10121; state: ENABLED
+10-13 16:49:27.068   578  1254 W ProcessStats: Tracking association SourceState{aa949f6 com.google.android.gms/10127 BFgs #11308} whose proc state 4 is better than process ProcessState{8e1a1f7 com.google.android.gms.unstable/10127 pkg=com.google.android.gms (sub)} proc state 14 (8 skipped)
+10-13 16:49:27.069  9091  9091 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+10-13 16:49:27.762   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:49:37.762   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:49:38.746   578   695 D ActivityManager: freezing 11153 com.google.android.permissioncontroller
+10-13 16:49:47.573   578   747 D ConnectivityService: releasing NetworkRequest [ REQUEST id=282, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&NOT_VCN_MANAGED Uid: 10132 RequestorUid: 10132 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ] (release request)
+10-13 16:49:47.574   578   747 I ConnectivityService: Update capabilities for net 100 : -FOREGROUND
+10-13 16:49:47.761   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:49:48.778  9091 10442 I NearbySharing: Network state changed: NetworkState(isRestricted=false, isOnline=true, isCongested=false, isMetered=false, isWifiConnected=true)
+10-13 16:49:57.760   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:50:00.003  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:50:00.004  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:50:00.004  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:50:00.004  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:50:00.004  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:50:00.013   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:50:00.016   825   932 D EGL_emulation: app_time_stats: avg=60001.44ms min=60001.44ms max=60001.44ms count=1
+10-13 16:50:02.840   578   989 W ProcessStats: Tracking association SourceState{aa949f6 com.google.android.gms/10127 BFgs #11313} whose proc state 4 is better than process ProcessState{8e1a1f7 com.google.android.gms.unstable/10127 pkg=com.google.android.gms (sub)} proc state 14 (2 skipped)
+10-13 16:50:05.002   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:50:05.487   578   653 W BatteryExternalStatsWorker: error reading Bluetooth stats: 9
+10-13 16:50:07.761   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:50:08.006   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:50:11.011   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:50:14.015   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:50:17.762   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:50:17.777   825   932 D EGL_emulation: app_time_stats: avg=17760.62ms min=17760.62ms max=17760.62ms count=1
+10-13 16:50:27.760   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:50:33.702   578  2334 D WifiNl80211Manager: Scan result ready event
+10-13 16:50:33.702   578  2334 D WifiNative: Scan result ready event
+10-13 16:50:37.760   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:50:47.760   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:50:47.778   825   932 D EGL_emulation: app_time_stats: avg=30000.60ms min=30000.60ms max=30000.60ms count=1
+10-13 16:50:55.425   578   635 I GnssLocationProvider: WakeLock acquired by handleDownloadPsdsData()
+10-13 16:50:55.426   578 11213 E GnssPsdsDownloader: No Long-Term PSDS servers were specified in the GnssConfiguration
+10-13 16:50:57.759   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:51:00.002  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:51:00.002  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:51:00.002  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:51:00.003  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:51:00.003  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:51:00.013   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:51:00.015   825   932 D EGL_emulation: app_time_stats: avg=12237.49ms min=12237.49ms max=12237.49ms count=1
+10-13 16:51:02.224   578  2334 D CompatibilityChangeReporter: Compat change id reported: 241766793; UID 10169; state: ENABLED
+10-13 16:51:02.225   578  2334 D CompatibilityChangeReporter: Compat change id reported: 161252188; UID 10169; state: DISABLED
+10-13 16:51:02.227   578  2334 D ActivityManager: sync unfroze 11153 com.google.android.permissioncontroller for 6
+10-13 16:51:07.759   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:51:17.759   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:51:27.759   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:51:37.758   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:51:42.280   578   695 D ActivityManager: freezing 11153 com.google.android.permissioncontroller
+10-13 16:51:47.758   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:51:57.758   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:51:59.744   578   740 E WifiStaIfaceAidlImpl: installApfPacketFilter failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+10-13 16:51:59.745   578  2334 W ProcessStats: Tracking association SourceState{aa949f6 com.google.android.gms/10127 BFgs #11320} whose proc state 4 is better than process ProcessState{8e1a1f7 com.google.android.gms.unstable/10127 pkg=com.google.android.gms (sub)} proc state 14 (0 skipped)
+10-13 16:51:59.746  9091  9091 D BoundBrokerSvc: onRebind: Intent { act=com.google.android.gms.common.telemetry.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+10-13 16:52:00.005  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:52:00.007  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:52:00.007  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:52:00.007  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:52:00.008  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:52:00.014   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:52:00.017   825   932 D EGL_emulation: app_time_stats: avg=60001.89ms min=60001.89ms max=60001.89ms count=1
+10-13 16:52:02.163   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:52:04.775  9091  9091 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.common.telemetry.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+10-13 16:52:05.168   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:52:07.758   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:52:17.758   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:52:27.758   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:52:27.760   825   932 D EGL_emulation: app_time_stats: avg=27743.07ms min=27743.07ms max=27743.07ms count=1
+10-13 16:52:37.757   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:52:47.757   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:52:57.757   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:52:57.760   825   932 D EGL_emulation: app_time_stats: avg=29999.83ms min=29999.83ms max=29999.83ms count=1
+10-13 16:53:00.003  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:53:00.003  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:53:00.003  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:53:00.003  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:53:00.004  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:53:00.014   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:53:00.019   825   932 D EGL_emulation: app_time_stats: avg=2258.88ms min=2258.88ms max=2258.88ms count=1
+10-13 16:53:07.649 10287 10376 I Finsky  : [47] Stats for Executor: LightweightExecutor yap@8c6b68d[Running, pool size = 2, active threads = 0, queued tasks = 0, completed tasks = 244]
+10-13 16:53:07.656 10287 10376 I Finsky  : [47] Stats for Executor: BlockingExecutor yap@648e042[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 40]
+10-13 16:53:07.663 10287 10376 I Finsky  : [47] Stats for Executor: bgExecutor yap@667c853[Running, pool size = 4, active threads = 0, queued tasks = 0, completed tasks = 190]
+10-13 16:53:07.756   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:53:13.706   578  1254 D WifiNl80211Manager: Scan result ready event
+10-13 16:53:13.706   578  1254 D WifiNative: Scan result ready event
+10-13 16:53:17.757   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:53:27.756   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:53:33.493  7291  7339 I Finsky:background: [46] Stats for Executor: bgExecutor yap@706d058[Running, pool size = 4, active threads = 0, queued tasks = 0, completed tasks = 4063]
+10-13 16:53:33.763  7291  7339 I Finsky:background: [46] Stats for Executor: LightweightExecutor yap@ace1617[Running, pool size = 2, active threads = 0, queued tasks = 0, completed tasks = 4883]
+10-13 16:53:33.788  7291  7339 I Finsky:background: [46] Stats for Executor: BlockingExecutor yap@1449a04[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 481]
+10-13 16:53:37.756   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:53:47.755   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:53:57.755   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:54:00.002  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:54:00.003  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:54:00.003  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:54:00.003  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:54:00.003  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:54:00.012   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:54:00.015   825   932 D EGL_emulation: app_time_stats: avg=59995.85ms min=59995.85ms max=59995.85ms count=1
+10-13 16:54:07.755   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:54:13.438   578  1254 W ProcessStats: Tracking association SourceState{aa949f6 com.google.android.gms/10127 BFgs #11324} whose proc state 4 is better than process ProcessState{8e1a1f7 com.google.android.gms.unstable/10127 pkg=com.google.android.gms (sub)} proc state 14 (3 skipped)
+10-13 16:54:17.006  9091  9091 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.feedback.internal.IFeedbackService dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+10-13 16:54:17.755   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:54:27.754   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:54:37.759   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:54:37.785   825   932 D EGL_emulation: app_time_stats: avg=37770.13ms min=37770.13ms max=37770.13ms count=1
+10-13 16:54:47.755   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:54:57.754   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:55:00.002  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:55:00.002  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:55:00.002  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:55:00.003  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:55:00.003  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:55:00.013   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:55:00.015   825   932 D EGL_emulation: app_time_stats: avg=22229.79ms min=22229.79ms max=22229.79ms count=1
+10-13 16:55:01.558   578   645 I UsageStatsService: User[0] Flushing usage stats to disk
+10-13 16:55:07.759   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:55:07.760   825   932 D EGL_emulation: app_time_stats: avg=7744.95ms min=7744.95ms max=7744.95ms count=1
+10-13 16:55:07.875   578  1817 W ProcessStats: Tracking association SourceState{aa949f6 com.google.android.gms/10127 BFgs #11330} whose proc state 4 is better than process ProcessState{8e1a1f7 com.google.android.gms.unstable/10127 pkg=com.google.android.gms (sub)} proc state 14 (5 skipped)
+10-13 16:55:17.753   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:55:27.753   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:55:37.753   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:55:47.752   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:55:53.706   578  1817 D WifiNl80211Manager: Scan result ready event
+10-13 16:55:53.706   578  1817 D WifiNative: Scan result ready event
+10-13 16:55:57.753   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:56:00.006  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:56:00.006  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:56:00.006  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:56:00.007  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:56:00.007  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:56:00.013   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:56:00.034   825   932 D EGL_emulation: app_time_stats: avg=52273.56ms min=52273.56ms max=52273.56ms count=1
+10-13 16:56:03.118   825   923 D ControlsListingControllerImpl: Subscribing callback, service count: 0
+10-13 16:56:03.120   825   923 D ControlsListingControllerImpl: Unsubscribing callback
+10-13 16:56:07.753   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:56:17.752   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:56:27.752   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:56:37.752   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:56:41.377   578   646 W ProcessStats: Tracking association SourceState{aa949f6 com.google.android.gms/10127 BFgs #11331} whose proc state 4 is better than process ProcessState{8e1a1f7 com.google.android.gms.unstable/10127 pkg=com.google.android.gms (sub)} proc state 14 (0 skipped)
+10-13 16:56:41.386   578  1817 D CompatibilityChangeReporter: Compat change id reported: 161145287; UID 10127; state: ENABLED
+10-13 16:56:41.417  9091 11223 I NetworkScheduler.Stats: (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+10-13 16:56:41.578  9091 11223 I NetworkScheduler.Stats: (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+10-13 16:56:41.670  9091 11224 I NetworkScheduler.Stats: (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+10-13 16:56:41.684  9091 11223 I NetworkScheduler.Stats: (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+10-13 16:56:41.886 10600 10776 D TrafficStats: tagSocket(86) with statsTag=0x1809, statsUid=-1
+10-13 16:56:41.892 10600 10776 W libc    : Access denied finding property "persist.adb.tls_server.enable"
+10-13 16:56:41.892 10600 10776 W libc    : Access denied finding property "service.adb.tls.port"
+10-13 16:56:41.889 10600 10600 W binder:10600_5: type=1400 audit(0.0:196): avc:  denied  { read } for  name="u:object_r:system_adbd_prop:s0" dev="tmpfs" ino=291 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:system_adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+10-13 16:56:41.889 10600 10600 W binder:10600_5: type=1400 audit(0.0:197): avc:  denied  { read } for  name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=59 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+10-13 16:56:41.908  9091 10442 W GmsUrlRequestImpl: [https://android.googleapis.com/auth/devicekey] Content-Type header is overwritten.
+10-13 16:56:41.922   578  2334 W AppOps  : Noting op not finished: uid 10127 pkg com.google.android.gms code 113 startTime of in progress event=1791899402800
+10-13 16:56:41.925   578  2334 W AppOps  : Noting op not finished: uid 10127 pkg com.google.android.gms code 113 startTime of in progress event=1791899402800
+10-13 16:56:41.927   578  2334 W AppOps  : Noting op not finished: uid 10127 pkg com.google.android.gms code 113 startTime of in progress event=1791899402800
+10-13 16:56:41.930   578  2334 W AppOps  : Noting op not finished: uid 10127 pkg com.google.android.gms code 113 startTime of in progress event=1791899402800
+10-13 16:56:41.934  9091  9352 I ActivityScheduler: nextTriggerTime: 5767547, in 598100ms, detectorType: 39, FULL_TYPE alarmWindowMillis: 200000
+10-13 16:56:42.065  9091  9580 D TrafficStats: tagSocket(154) with statsTag=0x4000401, statsUid=10127
+10-13 16:56:42.076  9091 11224 I NetworkScheduler.Stats: (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+10-13 16:56:42.092  9091  9091 D BoundBrokerSvc: onBind: Intent { act=com.google.android.contextmanager.service.ContextManagerLogsUploadBoundService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentInternalBoundBrokerService }
+10-13 16:56:42.092  9091  9091 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.contextmanager.service.ContextManagerLogsUploadBoundService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentInternalBoundBrokerService }
+10-13 16:56:42.093  9091 11211 I NetworkScheduler.Stats: (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+10-13 16:56:42.096  9091  9091 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.contextmanager.service.ContextManagerLogsUploadBoundService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentInternalBoundBrokerService }
+10-13 16:56:42.098  9091 11224 I NetworkScheduler.Stats: (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+10-13 16:56:42.119  9091 11097 I NetworkScheduler.Stats: (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+10-13 16:56:42.368  9091 10442 W GLSUser : [AppCertManager] Exception while requesting key: 
+10-13 16:56:42.368  9091 10442 W GLSUser : java.util.concurrent.ExecutionException: dkhx: Parsing Exception
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at ibye.k(:com.google.android.gms@263933032@26.39.33 (190800-995470952):21)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at ibym.u(:com.google.android.gms@263933032@26.39.33 (190800-995470952):73)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at aqji.b(:com.google.android.gms@263933032@26.39.33 (190800-995470952):374)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at aqjg.b(:com.google.android.gms@263933032@26.39.33 (190800-995470952):29)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at aqjb.a(:com.google.android.gms@263933032@26.39.33 (190800-995470952):1)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at aqje.a(:com.google.android.gms@263933032@26.39.33 (190800-995470952):58)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at algm.call(:com.google.android.gms@263933032@26.39.33 (190800-995470952):55)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at bpwh.d(:com.google.android.gms@263933032@26.39.33 (190800-995470952):50)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at bpwh.c(:com.google.android.gms@263933032@26.39.33 (190800-995470952):6)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at bpwh.run(:com.google.android.gms@263933032@26.39.33 (190800-995470952):33)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at bqch.run(:com.google.android.gms@263933032@26.39.33 (190800-995470952):8)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at java.lang.Thread.run(Thread.java:1012)
+10-13 16:56:42.368  9091 10442 W GLSUser : Caused by: dkhx: Parsing Exception
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at dkiy.jY(:com.google.android.gms@263933032@26.39.33 (190800-995470952):15)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at icax.run(:com.google.android.gms@263933032@26.39.33 (190800-995470952):56)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	... 7 more
+10-13 16:56:42.368  9091 10442 W GLSUser : Caused by: jcwo: Protocol message end-group tag did not match expected tag.
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at jcyf.a(:com.google.android.gms@263933032@26.39.33 (190800-995470952):57)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at jcxe.i(:com.google.android.gms@263933032@26.39.33 (190800-995470952):61)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at jcvp.P(:com.google.android.gms@263933032@26.39.33 (190800-995470952):22)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at jcvk.q(:com.google.android.gms@263933032@26.39.33 (190800-995470952):3)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at jctk.e(:com.google.android.gms@263933032@26.39.33 (190800-995470952):7)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at jctk.b(:com.google.android.gms@263933032@26.39.33 (190800-995470952):1)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at jctk.m(:com.google.android.gms@263933032@26.39.33 (190800-995470952):1)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at dkix.a(:com.google.android.gms@263933032@26.39.33 (190800-995470952):11)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at dkjc.call(:com.google.android.gms@263933032@26.39.33 (190800-995470952):8)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+10-13 16:56:42.368  9091 10442 W GLSUser : 	... 7 more
+10-13 16:56:42.370  9091 11097 I NetworkScheduler.Stats: (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+10-13 16:56:42.921  9091  9091 D BoundBrokerSvc: onRebind: Intent { act=com.google.android.gms.libs.gmscorelogger.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentDirectBootAwareApiService }
+10-13 16:56:44.547   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:56:47.752   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:56:47.760   825   932 D EGL_emulation: app_time_stats: avg=47725.99ms min=47725.99ms max=47725.99ms count=1
+10-13 16:56:50.558   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:56:57.751   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:57:00.002  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:57:00.002  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:57:00.002  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:57:00.002  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:57:00.003  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:57:00.013   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:57:00.015   825   932 D EGL_emulation: app_time_stats: avg=12254.30ms min=12254.30ms max=12254.30ms count=1
+10-13 16:57:07.751   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:57:08.170  9091  9580 D TrafficStats: tagSocket(97) with statsTag=0x5065fff, statsUid=-1
+10-13 16:57:08.585   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:57:08.849  9091  9580 D TrafficStats: tagSocket(121) with statsTag=0x5065fff, statsUid=10147
+10-13 16:57:09.061  9091  9580 D TrafficStats: tagSocket(124) with statsTag=0x5065fff, statsUid=10132
+10-13 16:57:11.415  9091 11230 D SharedPreferencesImpl: Time required to fsync /data/user/0/com.google.android.gms/shared_prefs/CCTQosUploaderService.xml: [<1: 0, <2: 0, <4: 2, <8: 0, <16: 0, <32: 0, <64: 0, <128: 0, <256: 0, <512: 0, <1024: 0, <2048: 2, <4096: 1, <8192: 0, <16384: 0, >=16384: 0]
+10-13 16:57:11.434  9091 11097 I NetworkScheduler.Stats: (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+10-13 16:57:11.435   578  1817 W ProcessStats: Tracking association SourceState{aa949f6 com.google.android.gms/10127 BFgs #11387} whose proc state 4 is better than process ProcessState{8e1a1f7 com.google.android.gms.unstable/10127 pkg=com.google.android.gms (sub)} proc state 14 (45 skipped)
+10-13 16:57:12.395   578   740 E WifiStaIfaceAidlImpl: installApfPacketFilter failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+10-13 16:57:12.805 11241 11241 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-13 16:57:14.593   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:57:17.598   825   825 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-13 16:57:17.757 11241 11241 I AndroidRuntime: Using default boot image
+10-13 16:57:17.757 11241 11241 I AndroidRuntime: Leaving lock profiling enabled
+10-13 16:57:17.760   825   932 D EGL_emulation: app_time_stats: avg=17745.73ms min=17745.73ms max=17745.73ms count=1
+10-13 16:57:17.761   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:57:17.763 11241 11241 I app_process: Using CollectorTypeCC GC.
+10-13 16:57:27.331 11241 11241 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+10-13 16:57:27.350 11241 11241 D app_process: Time zone APEX ICU file found: /apex/com.android.tzdata/etc/icu/icu_tzdata.dat
+10-13 16:57:27.350 11241 11241 D app_process: I18n APEX ICU file found: /apex/com.android.i18n/etc/icu/icudt72l.dat
+10-13 16:57:27.752   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:57:29.109 11241 11241 W app_process: Unexpected CPU variant for x86: x86_64.
+10-13 16:57:29.109 11241 11241 W app_process: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+10-13 16:57:36.403 11241 11241 W app_process: ClassLoaderContext shared library size mismatch. Expected=2, found=0 (PCL[]{PCL[/system/framework/android.test.base.jar*836642756]#PCL[/system/framework/android.test.mock.jar*3186112116]} | PCL[])
+10-13 16:57:37.750   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:57:38.210 11241 11241 W app_process: ClassLoaderContext classpath size mismatch. expected=0, found=1 (PCL[]{PCL[/system/framework/android.test.runner.jar*4168958247]{PCL[/system/framework/android.test.base.jar*836642756]#PCL[/system/framework/android.test.mock.jar*3186112116]}#PCL[/system/framework/android.test.base.jar*836642756]} | PCL[/system/framework/android.test.runner.jar*4168958247])
+10-13 16:57:39.745 11241 11241 W libc    : Access denied finding property "ro.product.name_for_attestation"
+10-13 16:57:39.746 11241 11241 W libc    : Access denied finding property "ro.product.brand_for_attestation"
+10-13 16:57:39.746 11241 11241 W libc    : Access denied finding property "ro.product.model_for_attestation"
+10-13 16:57:39.748 11241 11241 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10-13 16:57:39.741 11241 11241 W main    : type=1400 audit(0.0:198): avc:  denied  { read } for  name="u:object_r:build_attestation_prop:s0" dev="tmpfs" ino=85 scontext=u:r:shell:s0 tcontext=u:object_r:build_attestation_prop:s0 tclass=file permissive=0
+10-13 16:57:39.745 11241 11241 W main    : type=1400 audit(0.0:199): avc:  denied  { read } for  name="u:object_r:build_attestation_prop:s0" dev="tmpfs" ino=85 scontext=u:r:shell:s0 tcontext=u:object_r:build_attestation_prop:s0 tclass=file permissive=0
+10-13 16:57:39.754 11241 11241 D UiAutomationConnection: Created on user UserHandle{0}
+10-13 16:57:39.755 11241 11241 I UiAutomation: Initialized for user 0 on display 0
+10-13 16:57:39.755 11241 11241 W UiAutomation: Created with deprecatead constructor, assumes DEFAULT_DISPLAY
+10-13 16:57:39.745 11241 11241 W main    : type=1400 audit(0.0:200): avc:  denied  { read } for  name="u:object_r:build_attestation_prop:s0" dev="tmpfs" ino=85 scontext=u:r:shell:s0 tcontext=u:object_r:build_attestation_prop:s0 tclass=file permissive=0
+10-13 16:57:39.758   578   880 D AccessibilityManagerService: changeCurrentUserForTestAutomationIfNeededLocked(0): ignoring because device doesn't support visible background users
+10-13 16:57:39.758   578   880 I UiAutomationManager: Registering UiTestAutomationService (id=com.android.server.accessibility/UiAutomation) when called by user 0
+10-13 16:57:39.763   578   880 W WindowMagnificationMgr: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+10-13 16:57:39.765  1483  1500 I AiAiEcho: Settings changed for uri: content://settings/secure/accessibility_enabled
+10-13 16:57:39.768   578   880 W WindowMagnificationMgr: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+10-13 16:57:39.788   578   578 D BatterySaverPolicy: accessibility changed to true, updating policy.
+10-13 16:57:39.806  2346  2555 I A       : NGA disabled since it's running Panthera and at least one a11y feature is on.
+10-13 16:57:40.095  1483  1500 I AiAiEcho: Settings changed for uri: content://settings/secure/accessibility_enabled
+10-13 16:57:40.095  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:57:40.096  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:57:40.096  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:57:40.096  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:57:40.096  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:57:40.096  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:57:40.096  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:57:40.096  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:57:40.096  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:57:40.096  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:57:40.096  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:57:40.096  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:57:40.096  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:57:40.096  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:57:40.096  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:57:40.096  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:57:40.097  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:57:40.097  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:57:40.097  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:57:40.097  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:57:40.097  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:57:40.097  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:57:40.097  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:57:40.097  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:57:40.097  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface media_data_manager with targets# 0 (types=[])
+10-13 16:57:40.098   825   825 D SsMediaDataProvider: Forwarding Smartspace updates []
+10-13 16:57:40.098  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:57:40.098   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:57:40.098  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-13 16:57:40.099  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface media_data_manager with targets# 0 (types=[])
+10-13 16:57:40.099  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:57:40.099   825   825 D SsMediaDataProvider: Forwarding Smartspace updates []
+10-13 16:57:40.099   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:57:40.099  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-13 16:57:40.532  2346  2555 I A       : Nga state changed to NgaStateDetails{state=DISABLED, isSpecialExperience=false}
+10-13 16:57:41.896   578  1817 W ProcessStats: Tracking association SourceState{aa949f6 com.google.android.gms/10127 BFgs #11389} whose proc state 4 is better than process ProcessState{8e1a1f7 com.google.android.gms.unstable/10127 pkg=com.google.android.gms (sub)} proc state 14 (1 skipped)
+10-13 16:57:41.910 11241 11241 W AccessibilityNodeInfoDumper: Fetch time: 1084ms
+10-13 16:57:41.911   578  1817 W WindowMagnificationMgr: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+10-13 16:57:41.911   578  1817 D AccessibilityManagerService: restoreCurrentUserForTestAutomationIfNeededLocked(): ignoring because device doesn't support visible background users
+10-13 16:57:41.913  1483  1500 I AiAiEcho: Settings changed for uri: content://settings/secure/accessibility_enabled
+10-13 16:57:41.915  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:57:41.915  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:57:41.915  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:57:41.915  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:57:41.916  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:57:41.916  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:57:41.916  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:57:41.916  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:57:41.916  1483  1686 I AiAiEcho: Predicting[0]: 
+10-13 16:57:41.916  1483  1686 I AiAiEcho: EchoTargets: 
+10-13 16:57:41.916  1483  1686 I AiAiEcho: Filtered by AiAi flag check: 
+10-13 16:57:41.916  1483  1686 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-13 16:57:41.916  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface media_data_manager with targets# 0 (types=[])
+10-13 16:57:41.918  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-13 16:57:41.918  1483  1686 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-13 16:57:41.920   578   578 D BatterySaverPolicy: accessibility changed to false, updating policy.
+10-13 16:57:41.920   825   825 D SsMediaDataProvider: Forwarding Smartspace updates []
+10-13 16:57:41.920   825   825 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-13 16:57:41.921  2346  2546 I A       : NGA enabled in interactor.
+10-13 16:57:41.921  2346  2546 I A       : Nga state changed to NgaStateDetails{state=ENABLED, isSpecialExperience=false}
+10-13 16:57:42.110 11241 11241 D AndroidRuntime: Shutting down VM
+10-13 16:57:44.293  1503  7933 I A       : APA or Classic session decision: SessionDecision(sessionVariance=CLASSIC, platformVariance=CLASSIC, justification=CURRENT_PLATFORM_VARIANCE).
+10-13 16:57:44.293  1503  2174 I A       : Unsubscribed to apa or classic variant change.
+10-13 16:57:44.454  1503  7933 I A       : [Memory] eligibility: StashEligibility{4}
+10-13 16:57:44.684  1503  7933 I A       : Initializing all components
+10-13 16:57:45.015  1503  2175 I A       : onIsEnabledChanged, isEnabled: false
+10-13 16:57:45.015  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.015  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.016  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.016  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.016  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.016  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.016  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.016  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.016  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.017  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.017  1503  2175 I A       : onOpaVisibilityChanged: false
+10-13 16:57:45.017  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.017  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.017  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.017  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.017  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.017  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.018  1503  2175 I A       : Setting session to type: NO_SESSION
+10-13 16:57:45.018  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.018  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.018  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.018  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.018  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.018  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.019  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.019  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.707  1503  7933 I A       : APA or Classic session decision: SessionDecision(sessionVariance=CLASSIC, platformVariance=CLASSIC, justification=CURRENT_PLATFORM_VARIANCE).
+10-13 16:57:45.722  1503  2175 I A       : setNavBarVisible: GestureNavBarVisible{navbarVisible=true}
+10-13 16:57:45.722  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.722  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.723  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.723  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.723  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.723  1503  2175 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+10-13 16:57:45.723  1503  2175 I A       : onDisabled. Registered: false
+10-13 16:57:45.938  1503  7933 I A       : [Memory] eligibility: StashEligibility{6}
+10-13 16:57:46.036  1503  2175 I A       : on opa visibility changed false
+10-13 16:57:46.036  1503  2175 I A       : on opa visibility changed false
+10-13 16:57:46.168  1503  1503 E GsaVoiceSerConnection: gsaVis null binding
+10-13 16:57:46.303  1503  2175 I A       : State changed: IDLE => IDLE by NGA_STATE_CHANGED and N/A with Optional.empty
+10-13 16:57:46.432  1503  2175 I A       : Recognizer choice: (recognizer_type: 1, recognizer_mode: 1, choice_reason: 4)
+10-13 16:57:46.436  1503  2175 I A       : onActiveStateChangeEvent: IDLE => IDLE
+10-13 16:57:46.438  1503  2175 I A       : #onActiveStateChangeEvent, newState: IDLE, previousState: IDLE.
+10-13 16:57:46.441  1503  2175 I NgaEntryPointEventSendr: setupConnection
+10-13 16:57:47.125  1503  2174 I A       : Initialize
+10-13 16:57:47.317  1503  2174 I A       : stopListening(NGA_PAUSED_UNKNOWN_REASON, NGA_CREATE), idleOverride=NOT_LISTENING
+10-13 16:57:47.318  1503  2175 I NgaEntryPointEventSendr: State changed: Disconnected => Connecting
+10-13 16:57:47.318  1503  2175 I NgaEntryPointEventSendr: onServiceConnected
+10-13 16:57:47.318  2346  8613 I A       : Calling beginBinderSession().
+10-13 16:57:47.319  2346  8613 I A       : beginBinderSession(): calling binder
+10-13 16:57:47.427  1503  2175 I NgaEntryPointEventSendr: State changed: Connecting => Ready
+10-13 16:57:47.459  1503  2174 I A       : Successfully initialized all components
+10-13 16:57:47.750   825   825 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-13 16:57:47.758   578  1885 D ActivityManager: sync unfroze 11022 com.google.process.gservices for 7
