@@ -6,6 +6,17 @@
   use_tiered_cached_adj=false
   tiered_cached_adj_decay_time=60000
 --
+      extras: Bundle[{tag=system_app_anr, time=1791925597085, android.os.extra.DROPPED_COUNT=0}]
+    #158: BroadcastRecord{d350ffb android.os.UpdateLock.UPDATE_LOCK_CHANGED/u-1}
+      act=android.os.UpdateLock.UPDATE_LOCK_CHANGED flg=0x44000010 (has extras)
+--
+      extras: Bundle[{tag=system_app_anr, time=1791925593024, android.os.extra.DROPPED_COUNT=0}]
+    #196: BroadcastRecord{97b6f6d android.intent.action.DROPBOX_ENTRY_ADDED/u-1}
+      act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras)
+      extras: Bundle[{tag=system_app_anr, time=1791925593024, android.os.extra.DROPPED_COUNT=0}]
+    #197: BroadcastRecord{cfd7a2 android.os.UpdateLock.UPDATE_LOCK_CHANGED/u-1}
+      act=android.os.UpdateLock.UPDATE_LOCK_CHANGED flg=0x44000010 (has extras)
+--
 ACTIVITY MANAGER LAST ANR (dumpsys activity lastanr)
   <no ANR has occurred since boot>
 
