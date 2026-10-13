@@ -64,7 +64,7 @@ warn() { echo "WARN:  $*" >&2; }
 
 usage() {
   cat <<'EOF'
-Usage: emulator-harness.sh [--dry-run] <preflight|install|create|boot|status|teardown|reap|all>
+Usage: emulator-harness.sh [--dry-run] <preflight|install|create|boot|status|teardown|reap|reclaim|doctor|all>
        emulator-harness.sh --help
 
   --dry-run   print every command without executing it (safe on dq05)
@@ -78,6 +78,10 @@ Subcommands (all idempotent):
   status     report current emulator / adb / AVD state
   teardown   adb emu kill + adb kill-server, print what was removed
   reap       kill orphaned qemu-system / emulator processes
+  reclaim    free host disk that stalls the guest: journal vacuum (capped),
+             stale state.db snapshots, state_db_recover_work, stale /tmp probes
+  doctor     READ-ONLY host health: load, PSI io, disk, D-state, runaway scans.
+             Reports whether a reclaim or a REBOOT is required (never mutates)
   all        preflight + install + create + boot
 
 This script targets dq05 ONLY and refuses to run the emulator on any host
@@ -309,6 +313,65 @@ reap() {
 }
 
 # ---------------------------------------------------------------------------
+# reclaim — free host disk that stalls the guest
+#
+# Rationale (2026-10-13): dq05 reached 93% full with PSI io ~98% and tasks
+# wedged in D-state for the whole uptime; WhatsApp ANR'd on launch because the
+# guest was starved. Reclaiming the items below took it to 87% and cut the
+# write load. Store snapshots are REDUNDANT COPIES of a live state.db.
+# ---------------------------------------------------------------------------
+reclaim() {
+  local keep_snaps="${RECLAIM_KEEP_SNAPS:-2}"
+  local journal_cap="${RECLAIM_JOURNAL_CAP:-500M}"
+  log "RECLAIM: journal vacuum -> ${journal_cap}"
+  run "journal vacuum to ${journal_cap}" sh -c "journalctl --vacuum-size=${journal_cap}"
+
+  log "RECLAIM: stale state.db snapshots (keep ${keep_snaps} newest per profile)"
+  for prof in /home/c03rad0r/.hermes/profiles/*/; do
+    # The explicitly-corrupt restore is never usable — always remove.
+    for f in "$prof"state.db.restore.CORRUPT-*; do
+      [ -e "$f" ] || continue
+      run "remove corrupt restore $f" rm -f "$f"
+    done
+    # Keep the newest N .snap-* ; the live state.db is the source of truth.
+    local old
+    old=$(ls -1t "$prof"state.db.snap-* 2>/dev/null | tail -n +$((keep_snaps + 1)))
+    for f in $old; do
+      run "remove stale snapshot $f" rm -f "$f"
+    done
+  done
+
+  log "RECLAIM: state_db_recover_work (superseded recovery copies)"
+  run "clear state_db_recover_work" sh -c "rm -f /home/c03rad0r/.hermes/bot/state_db_recover_work/*.db"
+
+  log "RECLAIM: stale probe scratch in /tmp"
+  run "clear probe scratch" sh -c "rm -f /tmp/io-delta*.sh /tmp/io-read-watch.py /tmp/iowatch.py"
+
+  log "RECLAIM COMPLETE — re-run 'doctor' and compare df/PSI"
+}
+
+# ---------------------------------------------------------------------------
+# doctor — READ-ONLY host health; never mutates. Decides reclaim vs REBOOT.
+# ---------------------------------------------------------------------------
+doctor() {
+  echo "=== loadavg ==="; run "loadavg" cat /proc/loadavg
+  echo "=== PSI io ==="; run "PSI io" cat /proc/pressure/io
+  echo "=== disk / ==="; run "disk usage" df -h /
+  echo "=== D-state tasks ==="
+  run "D-state tasks" sh -c "ps -eo stat,etime,comm --sort=-etime | awk '\$1 ~ /^D/ {print}' | head -12"
+  echo "=== runaway recursive scans (grep/find/du over \$HOME) ==="
+  run "runaway scans" sh -c "ps -eo pid,etime,args | grep -E 'grep -rl|find /home|du -x' | grep -v grep | head -8"
+  echo
+  echo "VERDICT HINT:"
+  echo "  - PSI 'some avg10' > 90% WITH per-process IO ~0 MB/s  => storage stack"
+  echo "    WEDGED (D-state tasks from uptime) => RECLAIM will not fix it;"
+  echo "    a REBOOT is required (ask the operator; never reboot unilaterally)."
+  echo "  - PSI high WITH a runaway grep/find/du or a big writer  => run 'reclaim'"
+  echo "    and kill the named runaway (read-only scans are safe to kill)."
+  echo "  - disk > 90%  => run 'reclaim'."
+}
+
+# ---------------------------------------------------------------------------
 # dispatch
 # ---------------------------------------------------------------------------
 main() {
@@ -332,6 +395,8 @@ main() {
     status)    status ;;
     teardown)  teardown ;;
     reap)      reap ;;
+    reclaim)   reclaim ;;
+    doctor)    doctor ;;
     all)       preflight; install; create; boot ;;
     *)         echo "unknown subcommand: $cmd" >&2; usage >&2; exit 1 ;;
   esac
