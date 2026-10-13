@@ -37,6 +37,24 @@ ADB="${ADB:-$SDK_ROOT/platform-tools/adb}"
 AVD_NAME="${AVD_NAME:-wa-dev}"
 AVD_DEVICE="${AVD_DEVICE:-pixel_6}"
 SYSTEM_IMAGE="${SYSTEM_IMAGE:-system-images;android-34;google_apis_playstore;x86_64}"
+# --- AVD tuning (measured 2026-10-13; do not revert without re-measuring) -----
+# The default pixel_6 profile is 1080x2400 with 1536M RAM / 2 cores. On a
+# HEADLESS host there is no GPU, so SwiftShader renders every frame in software:
+# 2.6 Mpx/frame at 1080x2400 produced 92.6% janky frames and SYNTETIC TAPS WERE
+# SILENTLY DROPPED — u2 reported {"ok": true} while the UI never changed
+# (proven with a zero-risk overflow-menu probe: menu did not open at
+# 1080x2400, opened immediately at 540x1200). Measured improvements:
+#   launch WaitTime 24769ms (timeout) -> 2034ms (ok)
+#   emulator VmSwap 2.1 GB -> 285 MB
+#   u2 accessibility clicks land instead of being dropped
+# 540x1200 = 1/4 the pixels of 1080x2400. Keep RAM >= 4096M and cores 4 on a
+# 4-core/10GB class box; the guest honours an `wm size` override of 360x800.
+AVD_LCD_WIDTH="${AVD_LCD_WIDTH:-540}"
+AVD_LCD_HEIGHT="${AVD_LCD_HEIGHT:-1200}"
+AVD_LCD_DENSITY="${AVD_LCD_DENSITY:-240}"
+AVD_RAM_MB="${AVD_RAM_MB:-4096}"
+AVD_CORES="${AVD_CORES:-4}"
+AVD_HEAP_MB="${AVD_HEAP_MB:-512}"
 PLATFORM_PACKAGE="${PLATFORM_PACKAGE:-platform-tools}"
 BOOT_TIMEOUT_S="${BOOT_TIMEOUT_S:-600}"     # 55 * 10s polls in E1; 600s headroom
 BOOT_POLL_INTERVAL_S="${BOOT_POLL_INTERVAL_S:-10}"
@@ -74,6 +92,8 @@ Subcommands (all idempotent):
   preflight  gate check: openable /dev/kvm, >=15G disk, >=4G RAM, dl.google.com reachable
   install    sdkmanager install emulator + system image + platform-tools (no cmdline-tools upgrade)
   create     create AVD 'wa-dev' (pixel_6, android-34 google_apis_playstore x86_64)
+             and apply the measured headless tuning: 540x1200 lcd, 4G RAM,
+             4 cores, 512M heap (see the AVD_* comment for why)
   boot       headless launch + poll sys.boot_completed until 1 (bounded, prints t=<s>)
   status     report current emulator / adb / AVD state
   teardown   adb emu kill + adb kill-server, print what was removed
@@ -216,6 +236,25 @@ create() {
     echo "    [dry-run] skipped: create AVD"
   else
     echo no | "$AVDMANAGER" create avd -n "$AVD_NAME" -k "$SYSTEM_IMAGE" -d "$AVD_DEVICE" --force
+  fi
+
+  # Apply the measured tuning. MUST come after create (which writes defaults).
+  # See the AVD_* block at the top for the measurements behind these values.
+  local cfg="$HOME/.android/avd/$AVD_NAME.avd/config.ini"
+  if [ -f "$cfg" ]; then
+    log "TUNE: lcd ${AVD_LCD_WIDTH}x${AVD_LCD_HEIGHT}@${AVD_LCD_DENSITY}, ram ${AVD_RAM_MB}M, cores ${AVD_CORES}, heap ${AVD_HEAP_MB}M"
+    for kv in "hw.lcd.width=$AVD_LCD_WIDTH" "hw.lcd.height=$AVD_LCD_HEIGHT" \
+              "hw.lcd.density=$AVD_LCD_DENSITY" "hw.ramSize=${AVD_RAM_MB}M" \
+              "hw.cpu.ncore=$AVD_CORES" "vm.heapSize=${AVD_HEAP_MB}M"; do
+      local k="${kv%%=*}" v="${kv#*=}"
+      if grep -q "^$k *=" "$cfg" 2>/dev/null; then
+        sed -i "s|^$k *=.*|$k = $v|" "$cfg"
+      else
+        echo "$k = $v" >> "$cfg"
+      fi
+    done
+  else
+    warn "no config.ini at $cfg — skipping tuning"
   fi
   log "CREATE COMPLETE"
 }
