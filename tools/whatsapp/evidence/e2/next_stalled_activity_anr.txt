@@ -1,0 +1,12 @@
+  service_start_foreground_anr_delay_ms=10000
+  service_bind_almost_perceptible_timeout_ms=15000
+  network_access_timeout_ms=200
+--
+  short_fgs_anr_extra_wait_duration=10000
+  use_tiered_cached_adj=false
+  tiered_cached_adj_decay_time=60000
+--
+ACTIVITY MANAGER LAST ANR (dumpsys activity lastanr)
+  <no ANR has occurred since boot>
+
+ACTIVITY MANAGER STARTER (dumpsys activity starter)

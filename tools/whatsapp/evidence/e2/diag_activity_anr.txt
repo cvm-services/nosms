@@ -1,0 +1,23 @@
+  service_start_foreground_anr_delay_ms=10000
+  service_bind_almost_perceptible_timeout_ms=15000
+  network_access_timeout_ms=200
+--
+  short_fgs_anr_extra_wait_duration=10000
+  use_tiered_cached_adj=false
+  tiered_cached_adj_decay_time=60000
+--
+      extras: Bundle[{tag=data_app_anr, time=1791899353895, android.os.extra.DROPPED_COUNT=0}]
+    #209: BroadcastRecord{4bd0e40 android.intent.action.DROPBOX_ENTRY_ADDED/u-1}
+      act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras)
+      extras: Bundle[{tag=data_app_anr, time=1791899353895, android.os.extra.DROPPED_COUNT=0}]
+    #210: BroadcastRecord{7c98128 android.intent.action.TIME_TICK/u-1}
+      act=android.intent.action.TIME_TICK flg=0x50200010
+--
+  Last ANR service:
+ServiceRecord{dd4d1cd u0 com.google.android.apps.photos/.dbprocessor.impl.DatabaseProcessorJobService}
+    intent={cmp=com.google.android.apps.photos/.dbprocessor.impl.DatabaseProcessorJobService}
+--
+ACTIVITY MANAGER LAST ANR (dumpsys activity lastanr)
+  ANR time: Oct 13, 2026 3:48:05 PM
+  Reason: Input dispatching timed out (f9cbb03 com.whatsapp/com.whatsapp.registration.app.EULA (server) is not responding. Waited 5004ms for FocusEvent(hasFocus=true))
+
