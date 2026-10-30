@@ -28,7 +28,7 @@
       "postage_sats": 500,
       "change_sats": 267,
       "held_sats": 767,
-      "escrow_token": "cashuAeyJ0b2tl..."
+      "escrow_token": "<redacted-test-token>"
     },
     {
       "step": "check_state_after",
@@ -62,7 +62,7 @@
       "step": "refund_token",
       "status": "ok",
       "refund_sats": 766,
-      "token_prefix": "cashuAeyJ0b2tl..."
+      "token_prefix": "<redacted-test-token>"
     },
     {
       "step": "mint_pubkeys",
